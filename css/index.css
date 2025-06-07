@@ -1,0 +1,662 @@
+@font-face {
+  font-family: "para";
+  src: url("../ressource/fonts/ZenKakuGothicNew-Regular.ttf");
+}
+@font-face {
+  font-family: "bold";
+  src: url("../ressource/fonts/ZenKakuGothicNew-Bold.ttf");
+}
+@font-face {
+  font-family: "titre";
+  src: url("../ressource/fonts/SecularOne-Regular.ttf");
+}
+.none {
+  display: none !important;
+}
+
+html body #container-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #303030;
+  z-index: 5000;
+  width: 100%;
+  height: 260px;
+}
+html body #container-menu #menu-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 90%;
+  height: 100%;
+  padding-bottom: 10px;
+}
+html body #container-menu #menu-mobile #close-menu {
+  width: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+html body #container-menu #menu-mobile a {
+  text-decoration: none;
+  font-family: "bold";
+  font-size: 20px;
+  color: white;
+}
+
+@media screen and (width < 1130px) {
+  #titreCouverture {
+    font-size: 60px !important;
+  }
+  #description {
+    font-size: 18px !important;
+  }
+}
+@media screen and (width < 1100px) {
+  html body header nav {
+    width: 630px !important;
+  }
+}
+@media screen and (width < 950px) {
+  html body header nav {
+    width: 550px !important;
+    padding-right: 30px !important;
+  }
+  html body header nav .container-nav a {
+    font-size: 20px !important;
+  }
+  #titreCouverture {
+    font-size: 50px !important;
+  }
+  #description {
+    font-size: 17px !important;
+  }
+}
+@media screen and (width < 850px) {
+  html body header nav {
+    display: none !important;
+  }
+  #menu-burger {
+    display: block !important;
+  }
+  html body footer #container {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+  #titreCouverture {
+    font-size: 45px !important;
+  }
+}
+@media screen and (width < 650px) {
+  #btn-credits {
+    top: 70% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .infooter {
+    margin: 30px 0 50px !important;
+  }
+}
+@media screen and (width < 581px) {
+  #imgfond {
+    display: none !important;
+  }
+}
+@media screen and (width < 450px) {
+  #credits {
+    font-size: 12px !important;
+    text-align: center !important;
+  }
+  #btn-credits {
+    font-size: 14px !important;
+  }
+  .infooter {
+    font-size: 14px !important;
+  }
+  .infooter span:first-child {
+    font-size: 17px !important;
+  }
+  header img:first-child {
+    left: 10px !important;
+  }
+  #menu-burger {
+    right: 20px !important;
+  }
+}
+@media screen and (width < 390px) {
+  html body header img:first-child {
+    height: 35px !important;
+  }
+  #menu-burger {
+    height: 35px !important;
+  }
+}
+html body #mobile {
+  font-family: "para";
+  font-size: 17px;
+  color: white;
+}
+html body #mobile #content-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+html body #mobile #content-mobile h1 {
+  font-family: "titre";
+  font-size: 90px;
+  color: white;
+  margin: 50px 0 0;
+}
+html body #mobile #content-mobile h2 {
+  font-family: "bold";
+  font-size: 22px;
+  color: white;
+  margin: -20px 0 0;
+}
+html body #mobile #content-mobile h3 {
+  font-weight: 400;
+  font-family: "para";
+  font-size: 19px;
+  color: white;
+  margin: 10px 0;
+}
+html body #mobile #content-mobile #img-domaine {
+  margin: 50px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+html body #mobile #content-mobile #img-domaine img {
+  height: 250px;
+}
+html body #mobile #content-mobile #img-domaine #img3 img {
+  height: 280px;
+}
+html body #mobile #content-mobile #img-domaine #img1, html body #mobile #content-mobile #img-domaine #img2, html body #mobile #content-mobile #img-domaine #img3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+html body #mobile #content-mobile #img-domaine #flex-img {
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+html body #mobile #content-mobile #btns {
+  width: 60%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 200px;
+}
+html body #mobile #content-mobile #btns .btn-hover {
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 7px 11px 8.5px;
+  position: relative;
+}
+html body #mobile #content-mobile #btns .btn-hover a {
+  font-family: "para";
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+  background: transparent;
+  transition: all 0.35s;
+}
+html body #mobile #content-mobile #btns .btn-hover a:before, html body #mobile #content-mobile #btns .btn-hover a:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background: white;
+  z-index: -1;
+  transition: all 0.35s;
+}
+html body #mobile #content-mobile #btns .btn-hover a:before {
+  opacity: 0.5;
+}
+html body #mobile #content-mobile #btns .btn-hover a:after {
+  transition-delay: 0.2s;
+}
+html body #mobile #content-mobile #btns .btn-hover a:hover {
+  color: black;
+}
+html body #mobile #content-mobile #btns .btn-hover a:hover:before, html body #mobile #content-mobile #btns .btn-hover a:hover:after {
+  top: 0;
+}
+
+@media screen and (width < 1400px) {
+  #content img {
+    height: 450px !important;
+  }
+  #content {
+    margin-bottom: 200px !important;
+  }
+}
+@media screen and (width < 1300px) {
+  #container-left {
+    width: 500px !important;
+  }
+  #container-left h1 {
+    font-size: 115px !important;
+  }
+  #container-left h2 {
+    font-size: 29px !important;
+  }
+  #container-left h3 {
+    font-size: 22px !important;
+  }
+}
+@media screen and (width < 1100px) {
+  #content img {
+    height: 400px !important;
+  }
+  #container-left {
+    width: 420px !important;
+  }
+  #container-left h1 {
+    font-size: 100px !important;
+  }
+  #container-left h2 {
+    font-size: 25px !important;
+  }
+  #container-left h3 {
+    font-size: 20px !important;
+  }
+  #container-left #btns {
+    width: 100% !important;
+  }
+  #container-left p {
+    margin-bottom: 30px;
+  }
+}
+@media screen and (width < 950px) {
+  #container-left {
+    width: 380px !important;
+  }
+  #container-left h1 {
+    font-size: 85px !important;
+  }
+  #container-left h2 {
+    font-size: 22px !important;
+  }
+  #container-left #btns {
+    justify-content: space-between !important;
+    width: 95% !important;
+  }
+}
+@media screen and (width < 850px) {
+  #pc {
+    display: none !important;
+  }
+  #mobile {
+    display: block !important;
+  }
+}
+@media screen and (width < 650px) {
+  #flex-img #img1 img, #flex-img #img2 img {
+    height: 200px !important;
+  }
+  #img3 img {
+    height: 240px !important;
+  }
+  #btns {
+    margin-bottom: 250px !important;
+    width: 80% !important;
+  }
+}
+@media screen and (width < 560px) {
+  #flex-img #img1 img, #flex-img #img2 img {
+    height: 170px !important;
+  }
+  #img3 img {
+    height: 200px !important;
+  }
+}
+@media screen and (width < 450px) {
+  #flex-img #img1 img, #flex-img #img2 img {
+    height: 150px !important;
+  }
+  #img3 img {
+    height: 180px !important;
+  }
+  h1 {
+    font-size: 80px !important;
+  }
+  h2 {
+    font-size: 20px !important;
+  }
+  h3 {
+    font-size: 18px !important;
+  }
+  #btns {
+    font-size: 16px !important;
+    width: 100% !important;
+  }
+}
+@media screen and (width < 390px) {
+  #mobile {
+    font-size: 15px !important;
+  }
+  #mobile h1 {
+    font-size: 70px !important;
+  }
+  #mobile h2 {
+    font-size: 18px !important;
+  }
+  #mobile h3 {
+    font-size: 16px !important;
+  }
+  #mobile #flex-img #img1 img, #mobile #flex-img #img2 img {
+    height: 120px !important;
+  }
+  #mobile #img3 img {
+    height: 150px !important;
+  }
+  #mobile #btns {
+    font-size: 14px !important;
+  }
+  #mobile #btns .btn-hover {
+    padding: 4px 8px 5.5px !important;
+  }
+}
+@media screen and (height > 1000px) and (width < 1080px) {
+  #pc {
+    display: none !important;
+  }
+  #mobile {
+    display: block !important;
+  }
+}
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+html body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background: linear-gradient(45deg, rgb(22, 41, 111) 0%, rgb(47, 42, 133) 47%, rgb(47, 42, 133) 54%, rgb(100, 47, 141) 100%);
+  overflow-x: hidden;
+  height: 100%;
+}
+html body header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 90px;
+  position: static;
+  background-color: transparent;
+  z-index: 500;
+}
+html body header img:first-child {
+  height: 40px;
+  position: absolute;
+  top: 25px;
+  left: 50px;
+}
+html body header #menu-burger {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  height: 40px;
+  cursor: pointer;
+}
+html body header nav {
+  padding-right: 70px;
+  width: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+html body header nav .container-nav a {
+  font-family: "bold";
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+}
+html body header nav .container-nav .traits {
+  height: 3px;
+  width: 0;
+  background-color: white;
+  transition: width 0.2s;
+}
+html body header nav .container-nav .traits.active {
+  width: 100%;
+}
+html body header nav .container-nav:hover .traits {
+  width: 100%;
+}
+html body #content {
+  width: 100%;
+  margin: 80px 0 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+html body #content #container-left {
+  opacity: 0;
+  transform: translate(-200px, 0px);
+  transition: all 1.2s;
+  width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+html body #content #container-left h1 {
+  font-family: "titre";
+  font-size: 128px;
+  color: white;
+  margin: 0;
+}
+html body #content #container-left h2 {
+  font-family: "bold";
+  font-size: 32px;
+  color: white;
+  margin: 0;
+  margin-top: -30px;
+}
+html body #content #container-left h3 {
+  font-family: "para";
+  font-size: 24px;
+  color: white;
+}
+html body #content #container-left p {
+  font-family: "para";
+  font-size: 16px;
+  color: white;
+  text-align: justify;
+}
+html body #content #container-left #btns {
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+html body #content #container-left #btns .btn-hover {
+  overflow: hidden;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 7px 11px 8.5px;
+  position: relative;
+}
+html body #content #container-left #btns .btn-hover a {
+  font-family: "para";
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  overflow: hidden;
+  background: transparent;
+  transition: all 0.35s;
+}
+html body #content #container-left #btns .btn-hover a:before, html body #content #container-left #btns .btn-hover a:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -100%;
+  left: 0;
+  background: white;
+  z-index: -1;
+  transition: all 0.35s;
+}
+html body #content #container-left #btns .btn-hover a:before {
+  opacity: 0.5;
+}
+html body #content #container-left #btns .btn-hover a:after {
+  transition-delay: 0.2s;
+}
+html body #content #container-left #btns .btn-hover a:hover {
+  color: black;
+}
+html body #content #container-left #btns .btn-hover a:hover:before, html body #content #container-left #btns .btn-hover a:hover:after {
+  top: 0;
+}
+html body #content img {
+  opacity: 0;
+  transform: translate(200px, 0px);
+  transition: all 1.2s;
+  height: 500px;
+}
+html body footer {
+  width: 100%;
+  background-color: #1F1F21;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+html body footer #container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+html body footer #container .infooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "para";
+  font-size: 15px;
+  color: white;
+  margin: 20px 0;
+}
+html body footer #container .infooter span:first-child {
+  font-family: "para";
+  font-size: 20px;
+  color: white;
+}
+html body footer #credits {
+  margin-top: 10px;
+  font-family: "para";
+  font-size: 13px;
+  color: #929292;
+}
+html body footer #btn-credits {
+  position: absolute;
+  top: 75%;
+  left: 20px;
+  transform: none;
+  font-family: "para";
+  font-size: 15px;
+  color: white;
+}
+html body footer #btn-credits:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+html body #jsp-popup {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+html body #jsp-popup #container-popup {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7254901961);
+  z-index: 700;
+}
+html body #jsp-popup #container-popup #popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "para";
+  font-size: 18px;
+  color: black;
+  background-color: #E8E8E8;
+  border-radius: 10px;
+  width: 350px;
+  height: 450px;
+  text-align: center;
+  position: relative;
+}
+html body #jsp-popup #container-popup #popup #close {
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 95%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+html body #jsp-popup #container-popup #popup #container-text {
+  height: 330px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 30px;
+}
+html body #jsp-popup #container-popup #popup #container-text img {
+  width: 100px;
+}
+html body #jsp-popup #container-popup #popup #container-text span, html body #jsp-popup #container-popup #popup #container-text a {
+  font-family: "bold";
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+html body #jsp-popup #container-popup #popup #container-text a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=index.css.map */

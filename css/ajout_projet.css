@@ -1,0 +1,44 @@
+body {
+      background-color: #1e1e1e;
+      color: white;
+    }
+    .form-control, .form-select {
+      background-color: #2c2c2c;
+      border: 1px solid #444;
+      color: white;
+    }
+    .form-control::placeholder {
+      color: #aaa;
+    }
+    .btn-primary {
+      background-color: #006d77;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #005f66;
+    }
+    #previewContainer {
+      position: relative;
+      max-width: 300px;
+    }
+    #previewImage {
+      width: 100%;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
+    .remove-btn {
+      position: absolute;
+      top: 6px;
+      right: 5px;
+      background-color: rgba(255, 0, 0, 0.7);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 30px;
+      height: 30px;
+      font-weight: bold;
+      line-height: 20px;
+    }
+
+
+

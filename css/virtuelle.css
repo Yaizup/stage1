@@ -1,0 +1,427 @@
+@font-face {
+  font-family: "para";
+  src: url("../ressource/fonts/ZenKakuGothicNew-Regular.ttf");
+}
+@font-face {
+  font-family: "bold";
+  src: url("../ressource/fonts/ZenKakuGothicNew-Bold.ttf");
+}
+@font-face {
+  font-family: "titre";
+  src: url("../ressource/fonts/SecularOne-Regular.ttf");
+}
+.none {
+  display: none !important;
+}
+
+html body #container-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #303030;
+  z-index: 5000;
+  width: 100%;
+  height: 260px;
+}
+html body #container-menu #menu-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  width: 90%;
+  height: 100%;
+  padding-bottom: 10px;
+}
+html body #container-menu #menu-mobile #close-menu {
+  width: 30px;
+  align-self: flex-end;
+  cursor: pointer;
+}
+html body #container-menu #menu-mobile a {
+  text-decoration: none;
+  font-family: "bold";
+  font-size: 20px;
+  color: white;
+}
+
+@media screen and (width < 1130px) {
+  #titreCouverture {
+    font-size: 60px !important;
+  }
+  #description {
+    font-size: 18px !important;
+  }
+}
+@media screen and (width < 1100px) {
+  html body header nav {
+    width: 630px !important;
+  }
+}
+@media screen and (width < 950px) {
+  html body header nav {
+    width: 550px !important;
+    padding-right: 30px !important;
+  }
+  html body header nav .container-nav a {
+    font-size: 20px !important;
+  }
+  #titreCouverture {
+    font-size: 50px !important;
+  }
+  #description {
+    font-size: 17px !important;
+  }
+}
+@media screen and (width < 850px) {
+  html body header nav {
+    display: none !important;
+  }
+  #menu-burger {
+    display: block !important;
+  }
+  html body footer #container {
+    width: 100% !important;
+    font-size: 14px !important;
+  }
+  #titreCouverture {
+    font-size: 45px !important;
+  }
+}
+@media screen and (width < 650px) {
+  #btn-credits {
+    top: 70% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
+  .infooter {
+    margin: 30px 0 50px !important;
+  }
+}
+@media screen and (width < 581px) {
+  #imgfond {
+    display: none !important;
+  }
+}
+@media screen and (width < 450px) {
+  #credits {
+    font-size: 12px !important;
+    text-align: center !important;
+  }
+  #btn-credits {
+    font-size: 14px !important;
+  }
+  .infooter {
+    font-size: 14px !important;
+  }
+  .infooter span:first-child {
+    font-size: 17px !important;
+  }
+  header img:first-child {
+    left: 10px !important;
+  }
+  #menu-burger {
+    right: 20px !important;
+  }
+}
+@media screen and (width < 390px) {
+  html body header img:first-child {
+    height: 35px !important;
+  }
+  #menu-burger {
+    height: 35px !important;
+  }
+}
+@media screen and (width < 1365px) {
+  #container-map {
+    width: 90% !important;
+  }
+}
+@media screen and (width < 1200px) {
+  iframe {
+    width: 80% !important;
+  }
+}
+@media screen and (width < 1130px) {
+  #map h2 {
+    padding: 60px 0 20px !important;
+  }
+  #container-map {
+    flex-direction: column !important;
+  }
+  #container-map #info-map {
+    width: 95% !important;
+    font-size: 18px !important;
+    text-align: center !important;
+  }
+  #container-map iframe {
+    margin: 40px 0 80px;
+  }
+}
+@media screen and (width < 800px) {
+  #dixveux p {
+    font-size: 18px !important;
+  }
+  iframe {
+    width: 90% !important;
+  }
+}
+@media screen and (width < 700px) {
+  iframe {
+    width: 95% !important;
+  }
+}
+@media screen and (width < 581px) {
+  #dixveux p {
+    font-size: 15px !important;
+  }
+  #container-map #info-map {
+    font-size: 15px !important;
+  }
+}
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+html body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #242424;
+}
+html body #jsp-popup {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+}
+html body #jsp-popup #container-popup {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7254901961);
+  z-index: 700;
+}
+html body #jsp-popup #container-popup #popup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "para";
+  font-size: 18px;
+  color: black;
+  background-color: #E8E8E8;
+  border-radius: 10px;
+  width: 350px;
+  height: 450px;
+  text-align: center;
+  position: relative;
+}
+html body #jsp-popup #container-popup #popup #close {
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 95%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+html body #jsp-popup #container-popup #popup #container-text {
+  height: 330px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 30px;
+}
+html body #jsp-popup #container-popup #popup #container-text img {
+  width: 100px;
+}
+html body #jsp-popup #container-popup #popup #container-text span, html body #jsp-popup #container-popup #popup #container-text a {
+  font-family: "bold";
+  font-size: 18px;
+  color: black;
+  text-decoration: none;
+}
+html body #jsp-popup #container-popup #popup #container-text a:hover {
+  text-decoration: underline;
+}
+html body header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 90px;
+  position: fixed;
+  background-color: #2F2A85;
+  z-index: 500;
+}
+html body header img:first-child {
+  height: 40px;
+  position: absolute;
+  top: 25px;
+  left: 50px;
+}
+html body header #menu-burger {
+  position: absolute;
+  top: 25px;
+  right: 50px;
+  height: 40px;
+  cursor: pointer;
+}
+html body header nav {
+  padding-right: 70px;
+  width: 750px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+html body header nav .container-nav a {
+  font-family: "bold";
+  font-size: 22px;
+  color: white;
+  text-decoration: none;
+}
+html body header nav .container-nav .traits {
+  height: 3px;
+  width: 0;
+  background-color: white;
+  transition: width 0.2s;
+}
+html body header nav .container-nav .traits.active {
+  width: 100%;
+}
+html body header nav .container-nav:hover .traits {
+  width: 100%;
+}
+html body #dixveux {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #242424;
+  font-family: "para";
+  font-size: 20px;
+  color: white;
+  text-align: center;
+}
+html body #dixveux h1 {
+  margin: 120px 0 20px;
+  font-family: "titre";
+  font-size: 48px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0;
+}
+html body #dixveux p {
+  padding: 0 20px;
+}
+html body #dixveux iframe {
+  border: none;
+  margin-bottom: 70px;
+  aspect-ratio: 1000/650;
+  width: 70%;
+}
+html body #map {
+  overflow: hidden;
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 700px;
+  background: linear-gradient(45deg, rgb(22, 41, 111) 0%, rgb(47, 42, 133) 47%, rgb(47, 42, 133) 54%, rgb(100, 47, 141) 100%);
+}
+html body #map h2 {
+  margin: 0;
+  font-family: "titre";
+  font-size: 48px;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 60px 0;
+}
+html body #map #container-map {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+}
+html body #map #container-map #info-map {
+  font-family: "para";
+  font-size: 20px;
+  color: white;
+  width: 600px;
+  margin-right: 20px;
+}
+html body #map #container-map iframe {
+  border-radius: 10px;
+}
+html body footer {
+  width: 100%;
+  background-color: #1F1F21;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+html body footer #container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+html body footer #container .infooter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "para";
+  font-size: 15px;
+  color: white;
+  margin: 20px 0;
+}
+html body footer #container .infooter span:first-child {
+  font-family: "para";
+  font-size: 20px;
+  color: white;
+}
+html body footer #credits {
+  margin-top: 10px;
+  font-family: "para";
+  font-size: 13px;
+  color: #929292;
+}
+html body footer #btn-credits {
+  position: absolute;
+  top: 75%;
+  left: 20px;
+  transform: none;
+  font-family: "para";
+  font-size: 15px;
+  color: white;
+}
+html body footer #btn-credits:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=virtuelle.css.map */
