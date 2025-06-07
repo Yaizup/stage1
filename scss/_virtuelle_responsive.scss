@@ -1,0 +1,49 @@
+@import 'global_responsive.scss';
+
+@media screen and (width < 1365px){
+    #container-map{
+        width: 90% !important;
+    }
+}
+@media screen and (width < 1200px){
+    iframe{
+        width: 80% !important;
+    }
+}
+@media screen and (width < 1130px){
+    #map h2{
+        padding: 60px 0 20px !important;
+    }
+    #container-map{
+        flex-direction: column !important;
+        #info-map{
+            width: 95% !important;
+            font-size: 18px !important;
+            text-align: center !important;
+        }
+        iframe{
+            margin: 40px 0 80px;
+        }
+    }
+}
+@media screen and (width < 800px){
+    #dixveux p{
+        font-size: 18px !important;
+    }
+    iframe{
+        width: 90% !important;
+    }
+}
+@media screen and (width < 700px){
+    iframe{
+        width: 95% !important;
+    }
+}
+@media screen and (width < 581px){
+    #dixveux p{
+        font-size: 15px !important;
+    }
+    #container-map #info-map{
+        font-size: 15px !important;
+    }
+}

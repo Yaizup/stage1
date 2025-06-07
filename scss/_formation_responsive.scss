@@ -1,0 +1,437 @@
+@import 'global_responsive.scss';
+
+@media screen and (width < 1680px){
+    #orga{
+        width: 95% !important;
+    }
+}
+@media screen and (width < 1520px){
+    #flex{
+        width: 100% !important;
+    }
+}
+@media screen and (width < 1440px){
+    #container-pro{
+        display: none !important;
+    }
+    #container-pro-tablette{
+        display: flex !important;
+    }
+}
+@media screen and (width < 1365px){
+    #enseignement{
+        padding: 30px 0px !important;
+        #container-cours{
+            width: 95% !important;
+        }
+    }
+    #container-map{
+        width: 90% !important;
+    }
+}
+@media screen and (width < 1275px){
+    .CardContainer{
+        font-size: 17px !important;
+    }
+    .card-orga img{
+        width: 100px !important;
+    }
+    #frise-orga{
+        display: none !important;
+    }
+    #frise-mobile{
+        display: flex !important;
+    }
+    #container-ecoles{
+        width: 90% !important;
+    }
+}
+@media screen and (width < 1200px){
+    #flex{
+        display: none !important;
+    }
+    #flex2{
+        display: flex !important;
+        flex-wrap: wrap;
+        width: 100% !important;
+        .CardContainer{
+            width: 40% !important;
+            margin-bottom: 30px !important;
+        }
+        #CardContainerLeft2{
+            width: 50% !important;
+            @include scrollAnim(0px, 200px);
+        }
+        #CardContainerMiddle2{
+            @include scrollAnim(200px, 0px);
+        }
+        #CardContainerRight2{
+            @include scrollAnim(-200px, 0px);
+        }
+    }
+}
+@media screen and (width < 1130px){
+    #enseignement{
+        grid-column: 1 / 6 !important;
+        #container-cours{
+            width: 80% !important;
+        }
+    }
+    #parcours{
+        grid-column: 1 / 4 !important;
+    }
+    #sae{
+        grid-column: 4 / 6 !important;
+    }
+    #stage{
+        grid-column: 1 / 6 !important;
+    }
+    #container-ecoles{
+        width: 95% !important;
+        ul{
+            font-size: 16px !important;
+        }
+        h3{
+            font-size: 20px !important;
+        }
+        img{
+            width: 70px !important;
+        }
+    }
+    #map h2{
+        padding: 60px 0 20px !important;
+    }
+    #container-map{
+        flex-direction: column !important;
+        #info-map{
+            width: 95% !important;
+            font-size: 18px !important;
+            text-align: center !important;
+            @include scrollAnim(0, 100px);
+        }
+        iframe{
+            margin: 40px 0 80px;
+            @include scrollAnim(0, 100px);
+        }
+    }
+}
+@media screen and (width < 1000px){
+    #enseignement #container-cours{
+        width: 90% !important;
+    }
+    #container-ecoles{
+        justify-content: space-evenly !important;
+    }
+    html body #ContainerInfos #insertion-pro p{
+        text-align: justify !important;
+    }
+}
+@media screen and (width < 900px){
+    #containerBUT{
+        h1{
+            width: 80%;
+            font-size: 45px !important;
+        }
+    }
+    #flex2{
+        display: none !important;
+    }
+    #flex{
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        width: 100% !important;
+        .CardContainer{
+            width: 60% !important;
+            margin-bottom: 30px !important;
+        }
+        #CardContainerLeft{
+            @include scrollAnim(0px, 200px);
+        }
+        #CardContainerMiddle{
+            @include scrollAnim(0px, 250px);
+        }
+        #CardContainerRight{
+            @include scrollAnim(0px, 300px);
+        }
+    }
+    #container-info-card{
+        display: flex !important;
+        flex-direction: column !important;
+        width: 95%;
+        .card-orga{
+            padding: 20px !important;
+            margin-bottom: 40px !important;
+        }
+        #container-stage{
+            justify-content: space-between !important;
+        }
+        #container-cours{
+            width: 100% !important;
+        }
+    }
+}
+@media screen and (width < 859px){
+    #container-pro-tablette{
+        display: none !important;
+    }
+    .main-carousel{
+        display: block !important;
+    }
+    #insertion-pro{
+        padding-bottom: 100px;
+    }
+}
+@media screen and (width < 800px){
+    #containerBUT h1{
+        width: 90%;
+        font-size: 42px !important;
+    }
+    #flex{
+        .CardContainer{
+            img{
+                display: block !important;
+                cursor: pointer;
+                transition: all 0.6s;
+            }
+            p{
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height ease 0.5s;
+            }
+            &.actif{
+                img{
+                    transform: rotate(180deg);
+                    transition: all 0.6s;
+                }
+                p{
+                    height: auto;
+                    max-height: 800px;
+                    transition: max-height ease 0.5s;
+                }
+            }
+        }
+    }
+    #container-info-card{
+        .card-orga{
+            img:last-child{
+                width: 60px !important;
+                display: block !important;
+                cursor: pointer;
+                transition: all 0.6s;
+            }
+            #container-cours, #container-stage, .list{
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height ease 0.5s;
+            }
+            &.activeContainer{
+                img:last-child{
+                    transform: rotate(180deg);
+                    transition: all 0.6s;
+                }
+                #container-cours, #container-stage, .list{
+                    max-height: 800px;
+                    height: auto;
+                    transition: max-height ease 0.5s;
+                }
+            }
+        }
+    }
+    #ecoles{
+        p{
+            width: 80% !important;
+        }
+    }
+}
+@media screen and (width < 722px){
+        #container-cours{
+            flex-direction: column !important;
+            p{
+                font-size: 24px !important;
+            }
+            span{
+                font-size: 28px !important;
+            }
+            ul{
+                margin-bottom: 40px;
+                padding: 0;
+                text-align: left;
+            }
+            div{
+                padding-left: 50px;
+                width: 240px;
+                p{
+                    text-align: left !important;
+                }
+            }
+        }
+        #container-stage{
+            flex-direction: column !important;
+            align-items: center !important;
+            #info-stage, #info-alt{
+                width: 90% !important;
+            }
+        }
+        #container-map iframe{
+            width: 600px !important;
+        }
+}
+@media screen and (width < 650px){
+    #containerBUT h1{
+        font-size: 38px !important;
+    }
+    #ecoles{
+        #container-ecoles{
+            flex-direction: column !important;
+            width: 100% !important;
+            align-items: center !important;
+            .card-ecoles{
+                width: 50% !important;
+                aspect-ratio: unset !important;
+                ul{
+                    font-size: 18px !important;
+                    max-height: 0;
+                    overflow: hidden;
+                    margin: 0;
+                    transition: max-height ease 0.5s;
+                }
+                img{
+                    width: 110px !important;
+                }
+                img:last-child{
+                    display: block !important;
+                    width:60px !important;
+                    cursor: pointer;
+                    transition: all 0.6s;
+                }
+                h3{
+                    font-size: 24px !important;
+                }
+                &.activeEcole{
+                    img:last-child{
+                        transform: rotate(180deg);
+                        transition: all 0.6s;
+                    }
+                    ul{
+                        max-height: 800px;
+                        height: auto;
+                        margin: 0 0 15px;
+                        transition: max-height ease 0.5s;
+                    }
+                }
+            }
+        }
+    }
+    #container-map iframe{
+        width: 500px !important;
+    }
+}
+@media screen and (width < 581px){
+    #title-pc{
+        display: none !important;
+    }
+    #title-phone{
+        display: block !important;
+        padding: 130px 0 70px !important;
+    }
+    html body #containerBUT #flex{
+        font-size: 15px;
+        #CardContainerLeft{
+            @include scrollAnim(0px, 100px);
+        }
+        #CardContainerMiddle{
+            @include scrollAnim(0px, 150px);
+        }
+        #CardContainerRight{
+            @include scrollAnim(0px, 200px);
+        }
+    }
+    html body #ContainerInfos #ecoles #container-ecoles .card-ecoles{
+        width: 60% !important;
+    }
+    html body #ContainerInfos #ecoles {
+        p{
+            font-size: 16px !important;
+        }
+    }
+    html body #ContainerInfos #insertion-pro p{
+        font-size: 16px !important;
+    }
+    html body #ContainerInfos #insertion-pro .main-carousel{
+        #flickity-viewport{
+            .carousel-cell{
+                margin: 0 15px !important;
+                .metiers{
+                    width: 300px !important;
+                }
+            }
+        }
+    }
+    .flickity-button{
+        display: none;
+    }
+    #container-map #info-map{
+        font-size: 15px !important;
+    }
+    #container-map iframe{
+        width: 350px !important;
+    }
+}
+@media screen and (width < 485px){
+    #flex{
+        .CardContainer{
+            width: 70% !important;
+        }
+    }
+    html body #ContainerInfos #ecoles #container-ecoles .card-ecoles{
+        width: 75% !important;
+        h3{
+            font-size: 20px !important;
+        }
+    }
+}
+@media screen and (width < 400px){
+    .carousel-cell{
+        margin: 0 10px !important;
+        .metiers{
+            width: 250px !important;
+            img{
+                width: 70px !important;
+            }
+            h3{
+                font-size: 20px !important;
+            }
+        }
+    }
+    #container-map iframe{
+        width: 300px !important;
+    }
+}
+@media screen and (width < 370px){
+    #container-info-card{
+        .card-orga{
+            padding: 10px !important;
+            img:last-child{
+                width: 45px !important;
+            }
+        }
+        #enseignement{
+            #container-cours{
+                div{
+                    padding-left: 0px;
+                    width: 200px;
+                    p{
+                        text-align: center !important;
+                    }
+                }
+            }
+        }
+    }
+    html body #ContainerInfos #ecoles #container-ecoles .card-ecoles{
+        width: 80% !important;
+    }
+    #container-map iframe{
+        width: 280px !important;
+    }
+}

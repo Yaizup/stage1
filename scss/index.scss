@@ -1,0 +1,54 @@
+@import 'global.scss';
+@import 'index_responsive.scss';
+html{
+    @include reset();
+    min-height: 100%;
+    position: relative;
+    body{
+        @include reset();
+        background: linear-gradient(45deg, rgba(22,41,111,1) 0%, rgba(47,42,133,1) 47%, rgba(47,42,133,1) 54%, rgba(100,47,141,1) 100%);
+        @include header(static, transparent);
+        overflow-x: hidden;
+        height: 100%;
+        #content{
+            width: 100%;
+            margin: 80px 0 150px;
+            @include flex(row, space-evenly, center);
+            #container-left{
+                @include scrollAnim(-200px, 0px);
+                width: 600px;
+                @include flex(column, center, center);
+                h1{
+                    @include font("titre", 128px, $white);
+                    margin: 0;
+                }
+                h2{
+                    @include font("bold", 32px, $white);
+                    margin: 0;
+                    margin-top: -30px;
+                }
+                h3{
+                    @include font("para", 24px, $white);
+                }
+                p{
+                    @include font("para", 16px, $white);
+                    text-align: justify;
+                }
+                #btns{
+                    @include btn(80%);
+                }
+            }
+            img{
+                @include scrollAnim(200px, 0px);
+                height: 500px;
+            }
+        }
+        footer{
+            @include footer;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+        @include popup;
+    }
+}

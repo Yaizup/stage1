@@ -1,0 +1,31 @@
+@import 'global_responsive.scss';
+
+@media screen and (width < 1550px){
+    #ContainerFlex{
+        width: 80% !important;
+    }
+}
+@media screen and (width < 1370px){
+    #ContainerFlex{
+        width: 90% !important;
+    }
+}
+@media screen and (width < 1220px){
+    .projets{
+        width: 500px !important;
+    }
+    #ContainerFlex{
+        width: 95% !important;
+    }
+}
+@media screen and (width < 1100px){
+    #ContainerFlex{
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+}
+@media screen and (width < 581px){
+    #ContainerProjets h1{
+        margin-top: 70px !important;
+    }
+}

@@ -1,0 +1,371 @@
+@import 'global.scss';
+@import 'formation_responsive.scss';
+html{
+    @include reset();
+    overflow-x: hidden;
+    body{
+        @include reset();
+        @include header(fixed, $bleu);
+        @include couverture;
+        #description{
+            text-align: center;
+        }
+        #containerBUT{
+            overflow: hidden;
+            padding-bottom: 30px;
+            position: relative;
+            z-index: 10;
+            @include flex(column, center, center);
+            background: linear-gradient(45deg, rgba(22,41,111,1) 0%, rgba(47,42,133,1) 47%, rgba(47,42,133,1) 54%, rgba(100,47,141,1) 100%);
+            h1{
+                @include main-titre(0, 48px, 70px 0);
+            }
+            #flex{
+                @include card;
+                img{
+                    width: 50px;
+                }
+            }
+            #flex2{
+                @include card;
+            }
+        }
+        #ContainerInfos{
+            overflow: hidden;
+            position: relative;
+            z-index: 10;
+            background-color: $fond;
+            @include flex(column, center, center);
+            h2{
+                @include main-titre(90px 0 30px, 40px, 0);
+            }
+            #orga{
+                width: 85%;
+                @include flex(column, center, center);
+                #frise-orga{
+                    @include main-titre(0, 24px, 0);
+                    @include flex(row, space-evenly, center);
+                    width: 1050px;
+                    margin-bottom: 70px;
+                    #fleche1{
+                        z-index: 100;
+                        @include scrollAnim(-300px, 0);
+                    }
+                    #fleche2{
+                        z-index: 90;
+                        @include scrollAnim(-200px, 0);
+                    }
+                    #fleche3{
+                        z-index: 85;
+                        @include scrollAnim(-150px, 0);
+                    }
+                    #fleche4{
+                        @include fleche($violet-frise, 200px, 10px 0 10px 30px, "para", 18px, 0, 100%, 45px, $fond, $violet-frise);
+                        z-index: 80;
+                        @include scrollAnim(-100px, 0);
+                    }
+                    #fleche5{
+                        @include scrollAnim(-50px, 0);
+                    }
+                    .fleche{
+                        @include fleche($bleu-frise, 200px, 10px 0 10px 30px, "para", 18px, 0, 99.7%, 45px, $fond, $bleu-frise);
+                    }
+                    .entre-fleche{
+                        @include fleche($fond-card, 100px, 10px 0 10px 50px, "bold", 20px, 0, 99.6%, 45px, $fond, $fond-card);
+                    }
+                }
+                #frise-mobile{
+                    @include flex (row, center, center);
+                    padding: 30px 0 80px;
+                    #trait{
+                        height: 700px;
+                        width: 4px;
+                        background-color: $gris;
+                        position: relative;
+                        margin-right: 25px;
+                        #container-rond{
+                            height: 100%;
+                            @include flex(column, space-around, center);
+                            @include absolute(50%, 50%, translate(-50%, -50%));
+                            .rond-frise{
+                                width: 26px;
+                                height: 26px;
+                                border-radius: 50%;
+                                background-color: $gris;
+                            }
+                        }
+                    }
+                    #container-frise{
+                        height: 700px;
+                        @include flex(column, space-around, center);
+                        .card-frise{
+                            @include flex(column, space-evenly, center);
+                            @include font("para", 17px, $white);
+                            height: 110px;
+                            width: 250px;
+                            border-radius: 10px;
+                            background-color: $violet-frise;
+                            p{
+                                margin: 0;
+                                @include font("titre", 22px, $white);
+                            }
+                        }
+                        #card1, #card2{
+                            background-color: $bleu-frise;
+                        }
+                        #card3, #card5{
+                            background-color: $fond-card;
+                        }
+                        #card1{
+                            @include scrollAnim(100px, 0);
+                        }
+                        #card2{
+                            @include scrollAnim(130px, 0);
+                        }
+                        #card3{
+                            @include scrollAnim(190px, 0);
+                        }
+                        #card4{
+                            @include scrollAnim(220px, 0);
+                        }
+                        #card5{
+                            @include scrollAnim(250px, 0);
+                        }
+                    }
+                }
+
+                #container-info-card{
+                    display: grid;
+                    grid-template-columns: repeat(5, 1fr);
+                    gap: 15px;
+                    img{
+                        width: 115px;
+                    }
+                    .card-orga{
+                        background-color: $fond-card;
+                        border-radius: 10px;
+                        padding: 30px;
+                        @include font("para", 18px, $white);
+                        p{
+                            @include font("para", 20px, $white);
+                        }
+                        span{
+                            @include font("bold", 20px, $white);
+                        }
+                    }
+                    @media screen and (width > 1129px){
+                        #enseignement{
+                            @include scrollAnim(-200px, 0px);
+                        }
+                        #parcours{
+                            @include scrollAnim(200px, 0px);
+                        }
+                        #sae{
+                            @include scrollAnim(-200px, 0px);
+                        }
+                        #stage{
+                            @include scrollAnim(200px, 0px);
+                        }
+                    }
+                    @media screen and (width < 1130px){
+                        #enseignement{
+                            @include scrollAnim(0px, 50px);
+                        }
+                        #parcours{
+                            @include scrollAnim(-200px, 0px);
+                        }
+                        #sae{
+                            @include scrollAnim(200px, 0px);
+                        }
+                        #stage{
+                            @include scrollAnim(0px, 200px);
+                        }
+                    }
+                    @media screen and (width < 1000px){
+                        #parcours{
+                            @include scrollAnim(0px, 100px);
+                        }
+                        #sae{
+                            @include scrollAnim(0px, 150px);
+                        }
+                    }
+                    #enseignement{
+                        @include flex(column, flex-start, center);
+                        grid-column: 1 / 4;
+                        p{
+                            text-align: center;
+                        }
+                        #container-cours{
+                            @include flex(row, space-between, center);
+                            width: 90%;
+                            span{
+                                @include font("bold", 24px, $white);
+                            }
+                            p{
+                                text-align: center;
+                            }
+                        }
+                    }
+                    #parcours{
+                        @include flex(column, center, center);
+                        grid-column: 4 / 6;
+                        p{
+                            text-align: center;
+                        }
+                    }
+                    #sae{
+                        @include flex(column, center, center);
+                        grid-column: 1 / 3;
+                        p{
+                            margin: 30px 0 0 0;
+                            text-align: center;
+                        }
+                    }
+                    #stage{
+                        @include flex(column, center, center);
+                        grid-column: 3 / 6;
+                        #container-stage{
+                            @include flex(row, space-evenly, flex-start);
+                            h3{
+                                text-align: center;
+                                margin: 30px 0 0 0;
+                            }
+                            #info-stage, #info-alt{
+                                width: 45%;
+                            }
+                        }
+                    }
+                }
+            }
+            #ecoles{
+                overflow: hidden;
+                width: 100%;
+                @include flex(column, center, center);
+                p{
+                    @include font("para", 18px, $white);
+                    text-align: center;
+                    width: 70%;
+                    span{
+                        @include font("bold", 18px, $white);
+                    }
+                    &:last-child{
+                        text-align: justify;
+                    }
+                }
+                #container-ecoles{
+                    @include flex(row, space-between, flex-start);
+                    width: 80%;
+                    flex-wrap: wrap;
+                    .card-ecoles{
+                        @include card-formation(space-evenly, 27%, 370 / 450, 40px 0, 110px);
+                        padding: 15px;
+                        min-width: 250px;
+                    }
+                    @media screen and (width > 905px){
+                        #card-ecole1{
+                            @include scrollAnim(-200px, 0);
+                        }
+                        #card-ecole2{
+                            @include scrollAnim(0, 200px);
+                        }
+                        #card-ecole3{
+                            @include scrollAnim(200px, 0);
+                        }
+                    }
+                    @media screen and (width < 906px){
+                        #card-ecole1{
+                            @include scrollAnim(-200px, 0);
+                        }
+                        #card-ecole2{
+                            @include scrollAnim(200px, 0px);
+                        }
+                        #card-ecole3{
+                            @include scrollAnim(0px, 200px);
+                        }
+                    }
+                    @media screen and (width < 650px){
+                        #card-ecole1, #card-ecole2, #card-ecole3{
+                            @include scrollAnim(0, 200px);
+                        }
+                    }
+                    #card-ecole1{
+                        border: 1px solid $border-bleu;
+                    }
+                    #card-ecole2{
+                        border: 1px solid $jaune;
+                    }
+                    #card-ecole3{
+                        border: 1px solid $rose;
+                    }
+                }
+            }
+            #insertion-pro{
+                overflow: hidden;
+                @include flex(column, center, center);
+                p{
+                    @include font("para", 18px, $white);
+                    text-align: center;
+                    width: 80%;
+                }
+                #container-pro{
+                    display: grid;
+                    grid-template-columns: repeat(15, 1fr);
+                    grid-template-rows: repeat(2, 1fr);
+                    grid-row-gap: 50px;
+                    margin: 50px 0 150px;
+                    @include metiers;
+                }
+                #container-pro-tablette{
+                    @include metiers;
+                    @include flex(row, space-evenly, center);
+                    flex-wrap: wrap;
+                    .metiers{
+                        margin: 20px;
+                        ul{
+                            width: 80%;
+                        }
+                    }
+                }
+                .main-carousel{
+                    @include scrollAnim(0, 200px);
+                    display: none;
+                    width: 100%;
+                    height: 400px !important;
+                    margin-top: 50px;
+                    .flickity-viewport{
+                        height: 100% !important;
+                    }
+                    .carousel-cell{
+                        @include metiers;
+                        margin: 0 25px;
+                    }
+                    .flickity-page-dots{
+                        bottom: -35px;
+                        .dot{
+                            background-color: $white;
+                            margin: 0 8px;
+                        }
+                    }
+                }
+            }
+        }
+        #map{
+            @include map;
+            #container-map{
+                @media screen and (width > 1129px){
+                    #info-map{
+                        @include scrollAnim(-200px, 0px);
+                    }
+                    iframe{
+                        @include scrollAnim(200px, 0px);
+                    }
+                }
+            }
+        }
+        footer{
+            @include footer;
+            position: relative;
+        }
+        @include popup;
+    }
+}

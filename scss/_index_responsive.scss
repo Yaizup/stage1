@@ -1,0 +1,201 @@
+@import 'global_responsive.scss';
+
+html{
+    body{
+        #mobile{
+            @include font("para", 17px, $white);
+            #content-mobile{
+                @include flex(column, center, center);
+                h1{
+                    @include font("titre", 90px, $white);
+                    margin: 50px 0 0;
+                }
+                h2{
+                    @include font("bold", 22px, $white);
+                    margin: -20px 0 0;
+                }
+                h3{
+                    font-weight: 400;
+                    @include font("para", 19px, $white);
+                    margin: 10px 0;
+                }
+                #img-domaine{
+                    margin: 50px 0;
+                    @include flex(column, center, center);
+                    width: 100%;
+                    img{
+                        height: 250px;
+                    }
+                    #img3{
+                        img{
+                            height: 280px;
+                        }
+                    }
+                    #img1, #img2, #img3{
+                        @include flex(column, center, center);
+                    }
+                    #flex-img{
+                        margin-bottom: 30px;
+                        width: 100%;
+                        @include flex(row, space-evenly, center);
+                    }
+                }
+                #btns{
+                    @include btn(60%);
+                    margin-bottom: 200px;
+                }
+            }
+        }
+    }
+}
+@media screen and (width < 1400px){
+    #content img{
+        height: 450px !important;
+    }
+    #content{
+        margin-bottom: 200px !important;
+    }
+}
+@media screen and (width < 1300px){
+    #container-left{
+        width: 500px !important;
+        h1{
+            font-size: 115px !important;
+        }
+        h2{
+            font-size: 29px !important;
+        }
+        h3{
+            font-size: 22px !important;
+        }
+    }
+}
+@media screen and (width < 1100px){
+    #content img{
+        height: 400px !important;
+    }
+    #container-left{
+        width: 420px !important;
+        h1{
+            font-size: 100px !important;
+        }
+        h2{
+            font-size: 25px !important;
+        }
+        h3{
+            font-size: 20px !important;
+        }
+        #btns{
+            width: 100% !important;
+        }
+        p{
+            margin-bottom: 30px;
+        }
+    }
+}
+@media screen and (width < 950px){
+    #container-left{
+        width: 380px !important;
+        h1{
+            font-size: 85px !important;
+        }
+        h2{
+            font-size: 22px !important;
+        }
+        #btns{
+            justify-content: space-between !important;
+            width: 95% !important;
+        }
+    }
+}
+@media screen and (width < 850px){
+    #pc{
+        display: none !important;
+    }
+    #mobile{
+        display: block !important;
+    }
+}
+@media screen and (width < 650px){
+    #flex-img{
+        #img1 img, #img2 img{
+            height: 200px !important;
+        }
+    }
+    #img3 img{
+        height: 240px !important;
+    }
+    #btns{
+        margin-bottom: 250px !important;
+        width: 80% !important;
+    }
+}
+@media screen and (width < 560px){
+    #flex-img{
+        #img1 img, #img2 img{
+            height: 170px !important;
+        }
+    }
+    #img3 img{
+        height: 200px !important;
+    }
+}
+@media screen and (width < 450px){
+    #flex-img{
+        #img1 img, #img2 img{
+            height: 150px !important;
+        }
+    }
+    #img3 img{
+        height: 180px !important;
+    }
+    h1{
+        font-size: 80px !important;
+    }
+    h2{
+        font-size: 20px !important;
+    }
+    h3{
+        font-size: 18px !important;
+    }
+    #btns{
+        font-size: 16px !important;
+        width: 100% !important;
+    }
+}
+@media screen and (width < 390px){
+    #mobile{
+        font-size: 15px !important;
+        h1{
+            font-size: 70px !important;
+        }
+        h2{
+            font-size: 18px !important;
+        }
+        h3{
+            font-size: 16px !important;
+        }
+        #flex-img{
+            #img1 img, #img2 img{
+                height: 120px !important;
+            }
+        }
+        #img3 img{
+            height: 150px !important;
+        }
+        #btns{
+            font-size: 14px !important;
+            .btn-hover{
+                padding: 4px 8px 5.5px !important;
+            }
+        }
+    }
+}
+@media screen and (height > 1000px) and (width < 1080px){
+    #pc{
+        display: none !important;
+    }
+    #mobile{
+        display: block !important;
+    }
+}

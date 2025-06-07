@@ -1,0 +1,240 @@
+@import 'global_responsive.scss';
+
+@include carrousel-phone;
+@media screen and (width < 1251px){
+    #containerVR{
+        flex-direction: column !important;
+        align-items: center !important;
+        height: fit-content !important;
+        padding: 30px 0 80px !important;
+        .textes.anim-vr{
+            width: 70% !important;
+            margin-bottom: 30px !important;
+        }
+        #container360{
+            width: 80% !important;
+        }
+    }
+    #iframe{
+        height: 900px !important;
+        iframe{
+            width: 80% !important;
+        }
+    }
+}
+@media screen and (width < 1130px){
+    #container-carousel{
+        min-height: 700px !important;
+        .carousel-container{
+            max-width: 850px !important;
+            min-height: 350px !important;
+            .carousel-item{
+                height: 180px !important;
+            }
+            .carousel-item-2, .carousel-item-4{
+                height: calc(180px * 1.5) !important;
+                width: calc(180px * 1.5) !important;
+            }
+            .carousel-item-3{
+                height: calc(180px * 2) !important;
+                width: calc(180px * 2) !important;
+            }
+        }
+        .carousel-controls{
+            width: 900px !important;
+        }
+    }
+    #iframe{
+        height: 800px !important;
+    }
+}
+@media screen and (width < 950px){
+    #container-carousel{
+        .carousel-container{
+            max-width: 800px !important;
+            min-height: 300px !important;
+            .carousel-item{
+                height: 150px !important;
+            }
+            .carousel-item-2, .carousel-item-4{
+                height: calc(150px * 1.5) !important;
+                width: calc(150px * 1.5) !important;
+            }
+            .carousel-item-3{
+                height: calc(150px * 2) !important;
+                width: calc(150px * 2) !important;
+            }
+        }
+        .carousel-controls{
+            width: 810px !important;
+        }
+    }
+    #iframe{
+        height: 700px !important;
+    }
+}
+@media screen and (width < 850px){
+    #container-carousel{
+        height: 600px !important;
+        .carousel-container{
+            max-width: 700px !important;
+            min-height: 250px !important;
+            .carousel-item{
+                height: 120px !important;
+            }
+            .carousel-item-2, .carousel-item-4{
+                height: calc(120px * 1.5) !important;
+                width: calc(120px * 1.5) !important;
+            }
+            .carousel-item-3{
+                height: calc(120px * 2) !important;
+                width: calc(120px * 2) !important;
+            }
+        }
+        .carousel-controls{
+            width: 710px !important;
+        }
+    }
+}
+@media screen and (width < 777px){
+    #description{
+        flex-direction: column !important;
+    }
+    #container-carousel{
+        height: 570px !important;
+        .carousel-container{
+            max-width: 650px !important;
+            min-height: 250px !important;
+            .carousel-item{
+                height: 100px !important;
+            }
+            .carousel-item-2, .carousel-item-4{
+                height: calc(100px * 1.5) !important;
+                width: calc(100px * 1.5) !important;
+            }
+            .carousel-item-3{
+                height: calc(100px * 2) !important;
+                width: calc(100px * 2) !important;
+            }
+        }
+        .carousel-controls{
+            width: 650px !important;
+            img{
+                width: 35px !important;
+                height: 35px !important;
+            }
+        }
+    }
+    #iframe{
+        height: 600px !important;
+    }
+}
+@media screen and (width < 660px){
+    #container-carousel{
+        .carousel-container{
+            max-width: 550px !important;
+        }
+        .carousel-controls{
+            width: 570px !important;
+        }
+    }
+    #iframe{
+        height: 550px !important;
+        h2{
+            font-size: 35px !important;
+        }
+    }
+}
+@media screen and (width < 581px){
+    #containerVR{
+        padding-top: 100px !important;
+        .textes, #container360{
+            width: 80% !important;
+        }
+        #tuto{
+            z-index: 400 !important;
+        }
+        #container360{
+            margin-top: 50px !important;
+            opacity: 1 !important;
+            transform: translate(0px,0px) !important;
+        }
+    }
+    #container-carousel{
+        height: 650px !important;
+        h2{
+            padding: 50px 0 !important;
+            font-size: 35px !important;
+        }
+        .main-carousel{
+            display: block !important;
+        }
+    }
+    #container-carousel .carousel, #container-carousel .item-name{
+        display: none !important;
+    }
+    #container-menu{
+        background-color: $bleu !important;
+    }
+    #iframe{
+        h2{
+            font-size: 30px !important;
+        }
+    }
+}
+@media screen and (width < 472px){
+    #containerVR .textes h2{
+        font-size: 35px !important;
+    }
+    #container-carousel{
+        height: 600px !important;
+        h2{
+            font-size: 30px !important;
+        }
+        .main-carousel{
+            .carousel-cell{
+                height: 320px;
+                width: 320px;
+            }
+        }
+    }
+    #iframe{
+        height: 500px !important;
+        h2{
+            font-size: 25px !important;
+        }
+        iframe{
+            width: 90% !important;
+        }
+    }
+}
+@media screen and (width < 400px){
+    #containerVR .textes h2{
+        font-size: 30px !important;
+    }
+}
+@media screen and (width < 380px){
+    #container-carousel{
+        height: 520px !important;
+        h2{
+            font-size: 27px !important;
+        }
+        .main-carousel{
+            .carousel-cell{
+                height: 280px;
+                width: 280px;
+            }
+            .dot{
+                margin: 0 5px !important;
+            }
+        }
+    }
+    #iframe{
+        h2{
+            font-size: 25px !important;
+        }
+        iframe{
+            width: 95% !important;
+        }
+    }
+}

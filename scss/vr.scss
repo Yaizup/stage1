@@ -1,0 +1,90 @@
+@import 'global.scss';
+@import 'vr_responsive.scss';
+
+html{
+    @include reset;
+    overflow-x: hidden;
+    body{
+        @include popup;
+        @include reset;
+        @include header(fixed, $bleu);
+        @include couverture;
+        #containerVR{
+            overflow-x: hidden;
+            position: relative;
+            z-index: 10;
+            .textes.anim-vr{
+                @include scrollAnim(-150px, 0px);
+            }
+            height: 550px;
+            padding-top: 30px;
+            background-color: $fond;
+            @include textes(30%);
+            @include flex(row, space-evenly, flex-start);
+            h2{
+                text-align: center;
+            }
+            #container360{
+                width: 45%;
+                height: 450px;
+                position: relative;
+                border-radius: 10px;
+                overflow: hidden;
+                @include scrollAnim(150px, 0px);
+                #tuto{
+                    width: 350px;
+                    height: 300px;
+                    @include absolute(50%, 50%, translateX(-50%) translateY(-50%));
+                    background-color: rgba(0, 0, 0, 0.534);
+                    @include flex(column, space-evenly, center);
+                    border-radius: 5px;
+                    z-index: 400;
+                    h3{
+                        @include font("para", 25px, $white);
+                        margin: 0;
+                    }
+                    #container-img{
+                        @include flex(row, space-evenly, center);
+                        width: 70%;
+                        img{
+                            height: 45px;
+                        }
+                    }
+                    button{
+                        @include font("titre", 20px, $white);
+                        width: 70%;
+                        background-color: $bleu;
+                        border: none;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        @include carrousel;
+        .carousel, .item-name{
+            @include scrollAnim(0px, 200px);
+        }
+        #iframe{
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            height: 1000px;
+            @include flex(column, space-evenly, center);
+            background-color: $fond;
+            h2{
+                @include main-titre(0, 40px, 0);
+            }
+            iframe{
+                width: 60%;
+                border: 0.5px solid $white;
+                border-radius: 10px;
+                aspect-ratio: 1 / 0.63;                
+            }
+        }
+        footer{
+            z-index: 10;
+            @include footer;
+            position: relative;
+        }
+    }
+}

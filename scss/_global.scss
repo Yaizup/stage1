@@ -1,0 +1,602 @@
+//fonts
+@font-face {
+    font-family: "para";
+    src: url("../ressource/fonts/ZenKakuGothicNew-Regular.ttf");
+}
+@font-face {
+    font-family: "bold";
+    src: url("../ressource/fonts/ZenKakuGothicNew-Bold.ttf");
+}
+@font-face {
+    font-family: "titre";
+    src: url("../ressource/fonts/SecularOne-Regular.ttf");
+}
+
+//Variables
+$white : white;
+$black : black;
+$bleu : #2F2A85;
+$fond : #242424;
+$fond-blanc : #E8E8E8;
+$fond-card : #303030;
+$bleu-frise : #1C437E;
+$violet-frise : #632A9C;
+$jaune : #F7D881;
+$border-bleu: #6ED0F2;
+$rose: #FF5595;
+$violet: #AA91C7;
+$vert: #4EA276;
+$gris: #A8A8A8;
+
+//Mixin
+@mixin font($family, $size, $color){
+    font-family: $family;
+    font-size: $size;
+    color: $color;
+}
+@mixin flex($direction, $justify, $align){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin reset{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+@mixin header($position, $bg-color){
+    header{
+        @include flex(row, space-between, center);
+        width: 100vw;
+        height: 90px;
+        position: $position;
+        background-color: $bg-color;
+        z-index: 500;
+        img:first-child{
+            height: 40px;
+            position: absolute;
+            top: 25px;
+            left: 50px;
+        }
+        #menu-burger{
+            position: absolute;
+            top: 25px;
+            right: 50px;
+            height: 40px;
+            cursor: pointer;
+        }
+        nav{
+            padding-right: 70px;
+            width: 750px;
+            @include flex(row, space-around, center);
+            .container-nav{
+                a{
+                    @include font("bold", 22px, $white);
+                    text-decoration: none;
+                }
+                .traits{
+                    height: 3px;
+                    width: 0;
+                    background-color: $white;
+                    transition: width 0.2s;
+                    &.active{
+                        width: 100%;
+                    }
+                }
+                &:hover .traits{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@mixin textes($width){
+    .textes{
+        @include font("para", 17px, $white);
+        @include flex(column, center, center);
+        width: $width;
+        text-align: justify;
+        h2{
+            @include font("para", 40px, $white);
+            text-transform: uppercase;
+        }
+        span{
+            @include font("bold", 17px, $white);
+        }
+    }
+}
+@mixin scroll{
+    .icon-scroll, .icon-scroll:before{
+        position: fixed;
+        left: 50%;
+        z-index: 0;
+    }
+    .icon-scroll{
+        bottom: 5%;
+        width: 40px;
+        height: 70px;
+        box-shadow: inset 0 0 0 1px $white;
+        border-radius: 25px;
+        &:before{
+            content:'';
+            width: 8px;
+            height: 8px;
+            background: $white;
+            margin-left: 15px;
+            border-radius: 4px;
+            animation-duration: 1.5s;
+            animation-iteration-count: infinite;
+            animation-name: scroll;
+        }
+    }
+    @keyframes scroll{
+        0%{
+            opacity: 1;
+        }
+        100%{
+            opacity: 0;
+            transform: translateY(35px);
+        }
+    }
+}
+@mixin couverture{
+    #imgfond{
+        height: 100vh;
+        position: relative;
+        #imgcouverture{
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            filter:brightness(40%);
+        }
+        #titreCouverture{
+            @include absolute(45%, 50%, translateX(-50%) translateY(-50%));
+            text-transform: uppercase;
+            @include font("titre", 70px, $white);
+            filter: drop-shadow(1px 1px $black);
+            letter-spacing: 2px;
+            width: 100%;
+            text-align: center;
+        }
+        #description{
+            @include absolute(55%, 50%, translateX(-50%));
+            text-transform: uppercase;
+            @include font("para", 20px, $white);
+            @include flex(row, center, center);
+            width: 100%;
+            .rond{
+                height: 10px;
+                width: 10px;
+                background-color: $bleu;
+                border-radius: 50%;
+                margin: 10px;
+            }
+        }
+        @include scroll;
+    }
+}
+@mixin absolute($top, $left, $translate){
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: $translate;
+}
+@mixin footer(){
+    width: 100%;
+    background-color: #1F1F21;
+    @include flex(column, center, center);
+    #container{
+        @include flex(row, space-around, center);
+        width: 60%;
+        .infooter{
+            @include flex(column, center, center);
+            @include font("para", 15px, $white);
+            margin: 20px 0;
+        }
+        .infooter span:first-child{
+            @include font("para", 20px, $white);
+        }
+    }
+    #credits{
+        margin-top: 10px;
+        @include font("para", 13px, #929292);
+    }
+    #btn-credits{
+        @include absolute(75%, 20px, none);
+        @include font("para", 15px, $white);
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+        }
+    }
+}
+@mixin main-titre($margin, $size, $padding){
+    margin: $margin;
+    @include font("titre", $size, $white);
+    text-transform: uppercase;
+    text-align: center;
+    padding: $padding;
+}
+@mixin popup(){
+    #jsp-popup{
+        height: 100%;
+        width: 100%;
+        position: fixed;
+        z-index: 1000;
+        #container-popup{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            @include flex(row, center, center);
+            width: 100%;
+            height: 100%;
+            background-color: #000000b9;
+            z-index: 700;
+            #popup{
+                @include flex(column, center, center);
+                @include font("para", 18px, $black);
+                background-color: $fond-blanc;
+                border-radius: 10px;
+                width: 350px;
+                height: 450px;
+                text-align: center;
+                position: relative;
+                #close{
+                    width: 20px;
+                    @include absolute(10px, 95%, translateX(-50%));
+                    cursor: pointer;
+                }
+                #container-text{
+                    height: 330px;
+                    width: 320px;
+                    @include flex(column, space-evenly, center);
+                    margin-top: 30px;
+                    img{
+                        width: 100px;
+                    }
+                    span, a{
+                        @include font("bold", 18px, $black);
+                        text-decoration: none;
+                    }
+                    a:hover{
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+@mixin scrollAnim($x, $y){
+    opacity: 0;
+    transform: translate($x, $y);
+    transition: all 1.2s;
+}
+@mixin fleche($bg-color, $width, $padding, $family, $size, $left, $left2, $border, $color, $color2){
+    background-color: $bg-color;
+    width: $width;
+    height: 70px;
+    position: relative;
+    padding: $padding;
+    p{
+        margin: 0;
+        span{
+            @include font("para", 15px, $white);
+        }
+    }
+    span{
+        @include font($family, $size, $white);
+        text-transform: none;
+    }
+    &::before{
+        content: '';
+        position: absolute;
+        left: $left !important;
+        top: 0 !important;
+        height: 0;
+        width: 0;
+        border-top: solid $border transparent;
+        border-left: solid $border $color;
+        border-bottom: solid $border transparent;
+
+    }
+    &::after{
+        content: '';
+        position: absolute;
+        left: $left2 !important;
+        top: 0 !important;
+        height: 0;
+        width: 0;
+        border-top: solid $border transparent;
+        border-left: solid $border $color2;
+        border-bottom: solid $border transparent;
+    }
+}
+@mixin card-formation($flex, $width, $ratio, $margin, $img){
+    @include flex(column, $flex, center);
+    @include font("para", 18px, $white);
+    background-color: $fond-card;
+    border-radius: 10px;
+    width: $width;
+    aspect-ratio: $ratio;
+    margin: $margin;
+    img{
+        width: $img;
+    }
+    h3{
+        @include font("bold", 24px, $white);
+    }
+}
+@mixin btn($width){
+    width: $width;
+    @include flex(row, space-evenly, center);
+    .btn-hover{
+        overflow: hidden;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding: 7px 11px 8.5px;
+        position: relative;
+        a{
+            @include font("para", 18px, $white);
+            text-decoration: none;
+            overflow: hidden;
+            background: transparent;
+            transition: all .35s;
+            &:before, &:after{
+                position: absolute;
+                content: "";
+                width: 100%;
+                height: 100%;
+                top: -100%;
+                left: 0;
+                background: $white;
+                z-index: -1;
+                transition: all .35s;
+            }
+            &:before{
+                opacity: .5;
+            }
+            &:after{
+                transition-delay: .2s;
+            }
+            &:hover{
+                color: $black;
+            }
+            &:hover:before, &:hover:after{
+                top: 0;
+            }
+        }
+    }
+}
+@mixin card{
+    @include flex(row, space-evenly, normal);
+    min-height: 550px;
+    width: 95%;
+    @media screen and (width > 900px){
+        #CardContainerLeft{
+            @include scrollAnim(-200px, 0px);
+        }
+        #CardContainerMiddle{
+            @include scrollAnim(0px, 200px);
+        }
+        #CardContainerRight{
+            @include scrollAnim(200px, 0px);
+        }
+    }
+    .CardContainer{
+        @include flex(column, normal, center);
+        @include font("para", 18px, $black);
+        width: 23%;
+        height: fit-content;
+        padding: 10px 30px;
+        background-color: $white;
+        border-radius: 5px;
+        box-shadow: 1px 1px 4px $white;
+        text-align: justify;
+        h3{
+            @include font("titre", 26px, $black);
+            text-transform: uppercase;
+            margin: 20px 0 0 0;
+            text-align: center;
+        }
+        span{
+            @include font("bold", 18px, $black);
+        }
+    }
+}
+@mixin metiers{
+    .metiers{
+        @include card-formation(flex-start, 360px, 360 / 320, 0, 90px);
+        padding: 20px 10px;
+    }
+    #metier1, #metier1-tablette, #metier1-tel{
+        border: 1px solid $border-bleu;
+        grid-area: 1 / 3 / 2 / 6;
+    }
+    #metier2, #metier2-tablette, #metier2-tel{
+        border: 1px solid $jaune;
+        grid-area: 1 / 7 / 2 / 10;
+    }
+    #metier3, #metier3-tablette, #metier3-tel{
+        border: 1px solid $violet;
+        grid-area: 1 / 11 / 2 / 14;
+    }
+    #metier4, #metier4-tablette, #metier4-tel{
+        border: 1px solid $vert;
+        grid-area: 2 / 5 / 3 / 8;
+    }
+    #metier5, #metier5-tablette, #metier5-tel{
+        border: 1px solid $rose;
+        grid-area: 2 / 9 / 3 / 12;
+    }
+    @media screen and (width > 1280px){
+        #metier1, #metier1-tablette{
+            @include scrollAnim(-200px, 0);
+        }
+        #metier2, #metier2-tablette{
+            @include scrollAnim(0, -200px);
+        }
+        #metier3, #metier3-tablette{
+            @include scrollAnim(200px, 0);
+        }
+        #metier4, #metier5, #metier4-tablette, #metier5-tablette{
+            @include scrollAnim(0, 200px);
+        }
+    }
+    @media screen and (width < 1280px){
+        #metier1-tablette, #metier3-tablette{
+            @include scrollAnim(-200px, 0);
+        }
+        #metier2-tablette, #metier4-tablette{
+            @include scrollAnim(200px, 0px);
+        }
+        #metier5-tablette{
+            @include scrollAnim(0, 200px);
+        }
+    }
+}
+@mixin map{
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+    @include flex(column, flex-start, center);
+    min-height: 700px;
+    background: linear-gradient(45deg, rgba(22,41,111,1) 0%, rgba(47,42,133,1) 47%, rgba(47,42,133,1) 54%, rgba(100,47,141,1) 100%);
+    h2{                
+        @include main-titre(0, 48px, 60px 0);
+    }
+    #container-map{
+        @include flex(row, space-between, center);
+        width: 80%;
+        #info-map{
+            @include font("para", 20px, $white);
+            width: 600px;
+            margin-right: 20px;
+        }
+        iframe{
+            border-radius: 10px;
+        }
+    }
+}
+@mixin carrousel{
+    $carousel-height: 400px;
+    $carousel-width: 1100px;
+    $carousel-items-height: 200px;
+    $carousel-item-width: 200px;
+    #container-carousel{
+        overflow: hidden;
+        position: relative;
+        z-index: 10;
+        width: 100%;
+        min-height: 800px;
+        background: linear-gradient(45deg, rgba(22,41,111,1) 0%, rgba(47,42,133,1) 47%, rgba(47,42,133,1) 54%, rgba(100,47,141,1) 100%);
+        h2{
+            @include main-titre(0, 48px, 70px 0);
+        }
+        .carousel{
+            overflow: hidden;
+            width: 100%;
+            position: relative;
+            .carousel-container{
+                @include flex(row, normal, center);
+                min-height: $carousel-height;
+                margin: 0 auto;
+                max-width: $carousel-width;
+                position: relative;
+                .carousel-img{
+                    width: 100%;
+                    height: 100%;
+                }
+                .carousel-item{
+                    height: $carousel-items-height;
+                    opacity: 0;
+                    position: absolute;
+                    transform: translateX(-50%);
+                    transition: all 0.3s ease-in-out;
+                    z-index: 0;
+                    background-color: $fond;
+                    border-radius: 10px;
+                }
+                .carousel-item-1{
+                    left: 15%;
+                    opacity: 0.6;
+                }
+                .carousel-item-2, .carousel-item-4{
+                    height: calc($carousel-items-height * 1.5);
+                    opacity: 1;
+                    width: calc($carousel-item-width * 1.5);
+                    z-index: 1;
+                }
+                .carousel-item-2{
+                    left: 30%;
+                }
+                .carousel-item-3{
+                    height: calc($carousel-items-height * 2);
+                    opacity: 1;
+                    left: 50%;
+                    width: calc($carousel-item-width * 2);
+                    z-index: 2;
+                }
+                .carousel-item-4{
+                    left: 70%;
+                }
+                .carousel-item-5{
+                    left: 85%;
+                    opacity: 0.6;
+                }
+            }
+            .carousel-controls{
+                @include absolute(50%, 50%, translateX(-50%) translateY(-50%));
+                @include flex(row, space-between, center);
+                width: $carousel-width;
+                z-index: 5;
+                img{
+                    height: 45px;
+                    cursor: pointer;
+                    &:first-child{
+                        transform: scaleX(-1);
+                    }
+                    .ax-hidden{
+                        visibility: hidden;
+                        position: absolute;
+                    }
+                }
+            }
+        }
+        .item-name{
+            text-align: center;
+            @include font("bold", 20px, $white);
+        }
+    }
+}
+@mixin carrousel-phone{
+    #container-carousel{
+        .main-carousel{
+            display: none;
+            .carousel-cell{
+                background-color: $fond;
+                height: 370px;
+                width: 370px;
+                border-radius: 10px;
+                margin-right: 20px;
+                img{
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+            .flickity-button{
+                display: none;
+            }
+            .flickity-page-dots{
+                bottom: -35px;
+                .dot{
+                    background-color: $white;
+                }
+            }
+        }
+    }
+}
+//class
+.none{
+    display: none !important;
+}

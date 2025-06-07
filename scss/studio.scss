@@ -1,0 +1,41 @@
+@import 'global.scss';
+@import 'studio_responsive.scss';
+html{
+    @include reset();
+    body{
+        @include reset();
+        @include header(fixed, $bleu);
+        @include couverture;
+        #container-studio{
+            background-color: $fond;
+            overflow-x: hidden;
+            position: relative;
+            z-index: 10;
+            min-height: 550px;
+            @include flex(row, space-evenly, center);
+            @include textes(35%);
+            @media screen and (width > 580px){
+                h1{
+                    display: none;
+                }
+            }
+            h2{
+                text-align: center;
+                u{
+                    color: #00a300;
+                    text-decoration: none;
+                }
+            }
+            img{
+                width: 40%;
+                border-radius: 5px;
+            }
+        }
+        @include carrousel;
+    }
+    footer{
+        @include footer;
+        position: relative;
+    }
+    @include popup;
+}
