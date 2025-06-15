@@ -30,7 +30,6 @@
 ?>
 
 <?php
-    session_start();
     //constante
     define("DBHOST","localhost");
     define("DBUSER","root");
