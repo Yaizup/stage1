@@ -1,58 +1,59 @@
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    /* background-color: transparent; */
-    z-index: 1000;
-}
-
+/* Fond personnalisé */
 .navbar-custom {
-    background-color: #343e9d;
-    padding: 15px 0;
+  background: linear-gradient(to right, #1c1c1c, #2f2f2f);
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.navbar-nav {
-    margin-left: 50px; /* décaler menu vers droite */
-}
-
-.nav-link-custom {
-    position: relative;
-    margin: 0 15px;
-    color: #fff; /* texte blanc */
-    text-decoration: none;
-    font-weight: 500;
-    padding: 5px 0;
-}
-
-.nav-link-custom::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: 0;
-    left: 0;
-    background-color: #007bff;
-    transition: width 0.3s ease;
-}
-
-.nav-link-custom:hover::after,
-.nav-link-custom.active::after {
-    width: 100%;
-}
-
+/* Logo taille max */
 .navbar-brand img {
-    height: 50px; /* logo */
+  max-height: 50px;
+  height: auto;
+  width: auto;
 }
 
-/* menu burger en mobile */
-@media (max-width: 991.98px) {
-    .navbar-collapse {
-        background-color: #343e9d; /* même que navbar */
-        padding: 20px;
-        margin-top: 10px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-    .nav-link-custom {
-        color: #fff; /* assure texte visible sur fond bleu */
-    }
+/* Liens de navigation */
+.nav-link-custom {
+  margin-left: 1rem;
+  margin-right: 1rem;
+  white-space: nowrap;
+  transition: color 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-link-custom:hover {
+  color: #646363 !important;
+}
+
+.nav-link-custom.active {
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+}
+
+/* Bouton burger icône */
+.navbar-toggler {
+  border: none;
+  background-color: #fff;
+}
+
+.navbar-toggler:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .navbar-nav {
+    text-align: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .nav-link-custom {
+    display: block;
+    padding: 0.5rem 0;
+    margin: 0;
+  }
+
 }
