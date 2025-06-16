@@ -56,22 +56,35 @@
             <p>Retrouvez ici différents projets réalisés par des étudiants en MMI</p>
         </div>
 
-        <div class="container mb-2 mt-5">
-            <span class="mdi mdi-filter me-2 text-success fs-3"></span>
-            <button type="button" class="btn btn-lg butn btn-primary me-3">Tout</button>
-            <button type="button" class="btn butn btn-lg btn-primary me-3">
-                <span class="mdi me-2 mdi-gradient-horizontal"></span>infographie
-            </button>
-            <button type="button" class="btn butn btn-lg btn-primary me-3">
-                <span class="mdi me-2 mdi-cube-scan"></span>Dispositif Interactif 3D
-            </button>
-            <button type="button" class="btn butn btn-lg btn-primary me-3">
-                <span class="mdi me-2 mdi-film"></span>communication numérique
-            </button>
-            <button type="button" class="btn butn btn-lg btn-primary me-3">
-                <span class="mdi me-2 mdi-microsoft-visual-studio-code"></span>Développement Web & Mobile
-            </button>
-        </div>
+        <ul class="container mb-2 mt-5 d-flex flex-wrap gap-3 align-items-center list-unstyled">
+            <li class="me-3 d-flex align-items-center">
+                <span class="mdi mdi-filter text-success fs-3 me-2"></span>
+            </li>
+            <li class="me-3">
+                <button type="button" class="btn btn-lg butn btn-primary">Tout</button>
+            </li>
+            <li class="me-3">
+                <button type="button" class="btn btn-lg butn btn-primary">
+                    <span class="mdi mdi-gradient-horizontal me-2"></span>infographie
+                </button>
+            </li>
+            <li class="me-3">
+                <button type="button" class="btn btn-lg butn btn-primary">
+                    <span class="mdi mdi-cube-scan me-2"></span>Dispositif Interactif 3D
+                </button>
+            </li>
+            <li class="me-3">
+                <button type="button" class="btn btn-lg butn btn-primary">
+                    <span class="mdi mdi-film me-2"></span>Communication numérique
+                </button>
+            </li>
+            <li class="me-3">
+                <button type="button" class="btn btn-lg butn btn-primary">
+                    <span class="mdi mdi-microsoft-visual-studio-code me-2"></span>Développement Web & Mobile
+                </button>
+            </li>
+        </ul>
+
 
         <div class="container d-flex justify-content-center align-items-center mt-5 flex-column">
 
@@ -84,37 +97,55 @@
 
             <!-- Modal Bootstrap -->
             <div class="modal fade" id="modalProjet" tabindex="-1" aria-labelledby="modalProjetLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content bg-light">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="modalProjetLabel">Partager son projet</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
-                  </div>
-                  <form method="POST" enctype="multipart/form-data" class="p-3">
-                    <div class="modal-body">
-                      <div class="mb-3">
-                        <label for="titre" class="form-label">Titre du projet</label>
-                        <input type="text" class="form-control" name="titre" id="titre" required />
-                      </div>
-                      <div class="mb-3">
-                        <label for="description" class="form-label">Description</label>
-                        <textarea class="form-control" name="description" id="description" rows="4" required></textarea>
-                      </div>
-                      <div class="mb-3">
-                        <label for="fichier" class="form-label">Ajouter une image ou un fichier</label>
-                        <input type="file" class="form-control" name="fichier" id="fichier" />
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="submit" class="btn btn-success">Envoyer le projet</button>
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content bg-dark text-white border-secondary">
+      <div class="modal-header border-secondary">
+        <h5 class="modal-title" id="modalProjetLabel">Ajout d’un projet étudiant</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
+      </div>
+      <form method="POST" enctype="multipart/form-data" class="p-4">
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="titre" class="form-label">Nom du projet</label>
+            <input type="text" class="form-control bg-dark text-white border-secondary" id="titre" name="titre" placeholder="Ex : Portfolio, Jeu 3D..." required />
+          </div>
+          <div class="mb-3">
+            <label for="categorie" class="form-label">Catégorie</label>
+            <select class="form-select bg-dark text-white border-secondary" id="categorie" name="categorie" required>
+              <option selected disabled>Choisissez une catégorie</option>
+              <option value="infographie">Infographie</option>
+              <option value="3d">Dispositif Interactif 3D</option>
+              <option value="communication">Communication numérique</option>
+              <option value="web">Développement Web & Mobile</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="image" class="form-label">Image du projet</label>
+            <input type="file" class="form-control bg-dark text-white border-secondary" id="image" name="image" />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <textarea class="form-control bg-dark text-white border-secondary" id="description" name="description" rows="4" placeholder="Ex : Decris ton projet" required></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="fichier" class="form-label">Fichier</label>
+            <input type="file" class="form-control bg-dark text-white border-secondary" id="fichier" name="fichier" />
+          </div>
+          <div class="mb-3">
+            <label for="date" class="form-label">Date de finalisation</label>
+            <input type="text" class="form-control bg-dark text-white border-secondary" id="date" name="date" placeholder="Ex : 2024" />
+          </div>
         </div>
+        <div class="modal-footer border-secondary">
+          <button type="submit" class="btn btn-teal">Ajouter le projet</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+      
 
         <?php include "test.php"; ?>
     </div>
@@ -124,6 +155,7 @@
             <div class="row text-center text-md-start">
                 <div class="col-12 col-md-6 mb-3 mb-md-0">
                     <h5>Adresse IUT</h5>
+                    
                     <p class="mb-0">17 Rue Jablinot</p>
                     <p class="mb-0">77100 Meaux</p>
                 </div>
@@ -143,6 +175,7 @@
     </footer>
 
     <script src="js/projets.js"></script>
+    <script src="js/ajout_projet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
