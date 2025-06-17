@@ -15,3 +15,7 @@ html, body {
 footer {
   flex-shrink: 0; /* Ne se réduit pas */
 }
+
+textarea{
+  resize:none;
+}

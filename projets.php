@@ -1,3 +1,8 @@
+<?php 
+require_once "dbconnect.php";
+require_once "ajout_projet.php";
+
+?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8" />
@@ -8,12 +13,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/projets.css" />
     <link rel="stylesheet" href="css/navbarbs.css" />
+    <link rel="stylesheet" href="css/ajout_projet.css" />
     <link rel="stylesheet" href="css/btn.css" />
     <link href="css/carte_projet.css" rel="stylesheet" />
     <link rel="icon" href="ressource/mini_logo.png" />
 </head>
 <body class="bg-dark">
-
+  
     <header>
         <div class="container mt-5">
             <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
@@ -103,7 +109,7 @@
         <h5 class="modal-title" id="modalProjetLabel">Ajout d’un projet étudiant</h5>
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fermer"></button>
       </div>
-      <form method="POST" enctype="multipart/form-data" class="p-4">
+      <form method="POST" action="ajout_projet.php" enctype="multipart/form-data" class="p-4">
         <div class="modal-body">
           <div class="mb-3">
             <label for="titre" class="form-label">Nom du projet</label>
@@ -121,20 +127,28 @@
           </div>
           <div class="mb-3">
             <label for="image" class="form-label">Image du projet</label>
-            <input type="file" class="form-control bg-dark text-white border-secondary" id="image" name="image" />
+            <input type="file" class="form-control bg-dark text-white border-secondary" id="image" name="image" accept=".png, .jpg, .jpeg"/>
           </div>
           <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control bg-dark text-white border-secondary" id="description" name="description" rows="4" placeholder="Ex : Decris ton projet" required></textarea>
+            <textarea class="form-control bg-dark text-white border-secondary" id="description" name="descprojet" rows="2" placeholder="Ex : Décris ton projet brièvement" maxlength="100" required></textarea>
           </div>
           <div class="mb-3">
             <label for="fichier" class="form-label">Fichier</label>
-            <input type="file" class="form-control bg-dark text-white border-secondary" id="fichier" name="fichier" />
+            <input type="file" class="form-control bg-dark text-white border-secondary" id="fichier" name="fichier" accept=".pdf ,.png, .mp4" />
           </div>
           <div class="mb-3">
-            <label for="date" class="form-label">Date de finalisation</label>
-            <input type="text" class="form-control bg-dark text-white border-secondary" id="date" name="date" placeholder="Ex : 2024" />
-          </div>
+  <label for="annee" class="form-label">Date de finalisation</label>
+  <select class="form-select bg-dark text-white border-secondary" id="annee" name="annee" required>
+    <option value="">-- Choisissez une année --</option>
+    <?php
+      $annee_actuelle = date("Y");
+      for ($i = $annee_actuelle; $i >= 2020; $i--) {
+          echo "<option value=\"$i\">$i</option>";
+      }
+    ?>
+  </select>
+</div>
         </div>
         <div class="modal-footer border-secondary">
           <button type="submit" class="btn btn-teal">Ajouter le projet</button>
@@ -173,7 +187,6 @@
             </div>
         </div>
     </footer>
-
     <script src="js/projets.js"></script>
     <script src="js/ajout_projet.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
