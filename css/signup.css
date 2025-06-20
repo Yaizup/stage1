@@ -1,0 +1,29 @@
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .registerform {
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .role {
+      display: none;
+    }
+
+    @media (max-width: 576px) {
+      .form-control, .form-select {
+        font-size: 0.95rem;
+      }
+    }

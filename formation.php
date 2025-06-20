@@ -18,8 +18,12 @@ $sql = "SELECT * FROM `projet`";
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La formation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />s
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/navbarbs.css">
     <link rel="stylesheet" href="css/formation.css">
     <link rel="stylesheet" href="css/flickity.min.css" media="screen">
+   
     <link rel="icon" href="ressource/mini_logo.png">
 </head>
 <body>
@@ -29,12 +33,7 @@ $sql = "SELECT * FROM `projet`";
                 <img id="close" src="ressource/icones/delete.png" alt="fermer">
                 <div id="container-text">
                     <img src="ressource/icones/signboard.png" alt="panneau où il est écrit 'thank you'">
-                    <div id="container-p">
-                        <p>Icônes par <a href="https://www.flaticon.com">FlatIcon</a></p>
-                        <p>Illustrations par <a href="https://www.freepik.com">Freepik</a></p>
-                        <p>Photos par <span>Amélie VERGNAUD</span> et <span>Noémie SAINTEMARIE</span></p>
-                        <p>Visite Virtuelle par <span>Noémie SAINTEMARIE</span></p>
-                    </div>
+                   
                 </div> 
             </div>
         </div>
@@ -50,30 +49,7 @@ $sql = "SELECT * FROM `projet`";
         </div>
     </div>
     <header>
-        <a href="index.php"><img src="ressource/logo.png" alt="logo de l'Université Gustave Eiffel"></a>
-        <nav>
-            <div class="container-nav">
-                <a href="#">La Formation</a>
-                <div class="traits active"></div>
-            </div>
-            <div class="container-nav">
-                <a href="salleVR.php">Salle VR</a>
-                <div class="traits"></div>
-            </div>
-            <div class="container-nav">
-                <a href="studio.php">Studio</a>
-                <div class="traits"></div>
-            </div>
-            <div class="container-nav">
-                <a href="projets.php">Projets</a>
-                <div class="traits"></div>
-            </div>
-            <div class="container-nav">
-                <a href="visite-virtuelle.php">Visite Virtuelle</a>
-                <div class="traits"></div>
-            </div>
-        </nav>
-        <img id="menu-burger" class="none" src="ressource/icones/menu.png" alt="menu">
+        <?php include "navbarbs.php"; ?>
     </header>
     <div id="imgfond">
         <img id="imgcouverture" src="ressource/images/iut_exterieur.jpg" alt="extérieur de l'IUT">
@@ -523,5 +499,6 @@ $sql = "SELECT * FROM `projet`";
     <script src="js/index.js"></script>
     <script src="js/formation.js"></script>
     <script src="js/flickity.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

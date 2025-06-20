@@ -19,3 +19,33 @@ footer {
 textarea{
   resize:none;
 }
+
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.section-header {
+  background-color: #121417;
+  color: #ffffff;
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+.main-title {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-weight: 700;
+  font-size: 3rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  font-family: 'Inter', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
