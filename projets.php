@@ -154,7 +154,6 @@ require_once "ajout_projet.php";
 
     <hr class="border-secondary my-3">
 
-    <!-- Bas de page -->
     <div class="text-center small text-secondary">
       © 2023 - BUT MÉTIERS DU MULTIMÉDIA ET DE L'INTERNET, MEAUX
     </div>

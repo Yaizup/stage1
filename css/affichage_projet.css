@@ -1,0 +1,53 @@
+   body {
+      font-family: 'Roboto', sans-serif;
+      background-color: #fff;
+      font-size: 1.5rem; /* Texte plus grand */
+    }
+    .btn-retour {
+      font-size: 1.5rem;
+      margin-top: 40px;
+    }
+    .project-img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+    a {
+        text-decoration:none;
+    }
+    .footer {
+      background-color: #000;
+      color: white;
+      padding: 80px 0;
+      font-size: 1.5rem;
+    }
+    .footer a {
+      color: #d8ff5f;
+      margin: 0 20px;
+      font-size: 2rem;
+    }
+    .footer a:hover {
+      color: white;
+    }
+    .footer .small-links a {
+      font-size: 1.3rem;
+      color: #ccc;
+      margin: 0 15px;
+    }
+    .footer .small-links a:hover {
+      color: #fff;
+    }
+
+    html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex: 1;
+}
