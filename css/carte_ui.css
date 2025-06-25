@@ -1,0 +1,38 @@
+    body {
+      background: linear-gradient(95deg, rgb(22, 41, 111) 0%, rgb(47, 42, 133) 47%, rgb(47, 42, 133) 54%, rgb(100, 47, 141) 100%);
+      min-height: 100vh;
+      padding-top: 3rem;
+    }
+
+    .project-card {
+      border-radius: 1.25rem;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .project-image {
+      height: 250px;
+      width: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-image {
+      transform: scale(1.03);
+    }
+
+    .btn-projet {
+      background-color: #343e9d;
+      color: white;
+      border: none;
+    }
+
+    .btn-projet:hover {
+      background-color: #2a3180;
+    }

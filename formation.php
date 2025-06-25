@@ -3,7 +3,6 @@
 
 <?php
 require_once 'dbconnect.php';
-
 $sql = "SELECT * FROM `projet`";
 
 ?>

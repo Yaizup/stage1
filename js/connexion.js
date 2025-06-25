@@ -5,8 +5,6 @@
       document.getElementById('student').style.display = 'block';
     } else if (selected === 'enseignant') {
       document.getElementById('teacher').style.display = 'block';
-    } else if (selected === 'agent') {
-      document.getElementById('agent').style.display = 'block';
     } else if (selected === 'admin') {
       document.getElementById('admin').style.display = 'block';
     }

@@ -1,22 +1,22 @@
 
-
+<?php require_once 'dbconnect.php'; ?>
 
 
 <div class="container mt-5">
   <nav class="navbar navbar-expand-lg navbar-light navbar-custom fixed-top">
     <div class="container">
-      <!-- Logo -->
+ 
       <a class="navbar-brand" href="index.php">
-        <img src="ressource/logo.png" alt="logo de l'Université Gustave Eiffel" />
+        <img src="ressource/images/logommi_2025.png" alt="logo de l'Université Gustave Eiffel" />
       </a>
 
-      <!-- Bouton hamburger -->
+   
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
         aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- Liens du menu -->
+     
       <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
         <ul class="navbar-nav gap-3">
           <li class="nav-item">
@@ -33,6 +33,7 @@
           </li>
            <li class="nav-item">
             <a class="nav-link-custom text-white fs-5 " href="connexion.php"><span class="mdi mdi-account me-2"></span>Connexion</a>
+                <div class="sidebar-account">
           </li>
         </ul>
       </div>

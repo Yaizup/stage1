@@ -20,14 +20,16 @@ $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <title>Liste des projets</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <title>Liste des projets</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="css/carte_ui.css" rel="stylesheet"/>
 </head>
 <body>
 
-<div class="container py-5 min-vh-100 d-flex align-items-start">
-  <div class="w-100">
+<div class="container py-5 min-vh-100 d-flex align-items-start ">
+  <div class="w-100 ">
     <?php if (empty($projets)) : ?>
       <div class="row justify-content-center">
         <div class="col-12 col-md-8 text-center">
@@ -40,39 +42,24 @@ $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <div class="row justify-content-center g-4 mt-4">
         <?php foreach ($projets as $projet) : ?>
           <div class="col-md-6 col-lg-4">
-            <div class="card project-card h-100 shadow-sm">
+            <div class="card project-card shadow-sm h-100 border-0">
 
-
-              <!-- Image du projet -->
+              <!-- Image -->
               <?php if (!empty($projet['image']) && file_exists($projet['image'])) : ?>
-                <img src="<?= htmlspecialchars($projet['image']) ?>" class="card-img-top project-image" alt="Image du projet">
+                <img src="<?= htmlspecialchars($projet['image']) ?>" alt="Image du projet" class="project-image">
               <?php else : ?>
-                <img src="ressource/default.png" class="card-img-top project-image" alt="Image par défaut">
+                <img src="ressource/default.png" alt="Image par défaut" class="project-image">
               <?php endif; ?>
 
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title fw-bold"><?= htmlspecialchars($projet['nom']) ?></h5>
-                <p class="card-text"><?= nl2br(htmlspecialchars($projet['description'])) ?></p>
-                <div class="project-meta mb-3">
-                  <p><strong>Catégorie :</strong> <?= htmlspecialchars($projet['categorie']) ?></p>
-                  <p><strong>Date de finalisation :</strong> <?= htmlspecialchars($projet['date']) ?></p>
-                </div>
+              <div class="card-body d-flex flex-column text-center">
+                <h5 class="card-title fw-bold text-uppercase"><?= htmlspecialchars($projet['nom']) ?></h5>
+                <p class="card-text text-muted"><?= nl2br(htmlspecialchars($projet['description'])) ?></p>
+                <p class="mb-1"><strong>Catégorie :</strong> <?= htmlspecialchars($projet['categorie']) ?></p>
+                <p><strong>Date :</strong> <?= htmlspecialchars($projet['date']) ?></p>
 
-
-
-
-                <!-- Affichage du fichier PDF -->
-                <?php if (!empty($projet['fichier']) && file_exists($projet['fichier'])) : ?>
-                  <button 
-                    class="btn btn-danger w-100 mt-auto"
-                    onclick="window.open('<?= htmlspecialchars($projet['fichier']) ?>', '_blank')"
-                    type="button"
-                  >
-                    Voir le projet 
-                  </button>
-                <?php else : ?>
-                  <button class="btn btn-outline-secondary w-100 mt-auto" disabled>Aucun fichier joint</button>
-                <?php endif; ?>
+                <a href="affichage_projet.php?id=<?= urlencode($projet['id']) ?>" class="btn btn-projet w-100 mt-auto">
+                Voir le projet
+              </a>
 
               </div>
             </div>
@@ -80,7 +67,6 @@ $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <?php endforeach; ?>
       </div>
     <?php endif; ?>
-
   </div>
 </div>
 

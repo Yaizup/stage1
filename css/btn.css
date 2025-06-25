@@ -1,15 +1,10 @@
 .butn {
-  background-color: #343e9d;
-  color: white;
-  padding: 10px 25px;
+  background-color: #343e9d !important;
+  color: white !important;
   border: none;
-  border-radius: 8px;
-  display: inline-block;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
 }
 
 .butn:hover {
-  background-color: #2a3180;
+  background-color: #2a3180 !important;
+  color: white !important;
 }

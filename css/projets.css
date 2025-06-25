@@ -7,14 +7,7 @@ html, body {
   font-family: 'Inter', sans-serif;
 }
 
-#main-content {
-  flex: 1 0 auto; /* Prend tout l’espace disponible */
-}
 
-
-footer {
-  flex-shrink: 0; /* Ne se réduit pas */
-}
 
 textarea{
   resize:none;
@@ -24,6 +17,21 @@ textarea{
 
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+.bg-eiffel{
+  background: linear-gradient(95deg,
+    rgb(22, 41, 111) 0%,
+    rgb(35, 41, 122) 35%,
+    rgb(47, 42, 133) 60%,
+    rgb(85, 45, 138) 85%,
+    rgb(100, 47, 141) 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+
+}
 
 .section-header {
   background-color: #121417;

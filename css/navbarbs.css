@@ -1,13 +1,13 @@
 /* Fond personnalisé */
 .navbar-custom {
-  background: linear-gradient(to right, #1c1c1c, #2f2f2f);
+  background: linear-gradient(45deg, rgb(22, 41, 111) 0%, rgb(47, 42, 133) 47%, rgb(47, 42, 133) 54%, rgb(100, 47, 141) 100%);
   padding: 0.75rem 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Logo taille max */
+
 .navbar-brand img {
-  max-height: 50px;
+  max-height: 80px;
   height: auto;
   width: auto;
 }
