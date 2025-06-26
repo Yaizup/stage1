@@ -1,22 +1,31 @@
 <?php
 require_once 'dbconnect.php'; 
+session_start (); 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pseudo_email = $_POST['pseudo_email'];
     $mot_de_passe = $_POST['mot_de_passe'];
 
-    $stmt = $pdo->prepare("SELECT ID, mot_de_passe, role, status FROM inscription WHERE pseudo = ? OR email = ?");
+    // Requete pour vérifier si l'utilisateur existe par pseudo ou email
+    $stmt = $db->prepare("SELECT ID, mot_de_passe, role , status FROM inscription WHERE pseudo = ? OR email = ?");
     $stmt->execute([$pseudo_email, $pseudo_email]); 
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+    // Vérification du mot de passe et redirection en fonction du role
     if ($user && password_verify($mot_de_passe, $user['mot_de_passe'])) {
-        if ($user['status'] === 'Valider') {
+        if ($user['status'] == 1) {
             $_SESSION['user_id'] = $user['ID'];
             $role = strtolower($user['role']);
             switch ($role) {
-                case 'admin': header("Location: projets.php"); break;
-                case 'enseignant': header(""); break;
-                case 'agent': header(""); break;
+                case 'admin':
+                    header("Location: projets.php");
+                    break;
+                case 'enseignant':
+                    header("Location: projets.php");
+                    break;
+                case 'etudiant':
+                    header("Location: projets.php");
+                    break;
             }
             exit();
         } else {
@@ -27,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -40,17 +50,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="card shadow-lg p-5" style="width: 100%; max-width: 600px; border-radius: 20px;">
         <h2 class="text-center mb-4 fs-2">Connexion</h2>
-
         <?php if (isset($erreur)): ?>
-            <div class="alert alert-danger fs-6"><?= $erreur ?></div>
-        <?php endif; ?>
+    <div class="alert alert-danger fs-6"><?= htmlspecialchars($erreur) ?></div>
+<?php endif; ?>
 
-        <form action="index.php" method="post">
+
+        <form action="connexion.php" method="post">
             <div class="mb-4">
-                <input type="text" class="form-control form-control-lg fs-5" name="pseudo_email" placeholder="Pseudo ou Adresse e-mail" required>
+                <input type="text" class="form-control form-control-lg fs-5" name="pseudo_email" id="pseudo_email" placeholder="Pseudo ou Adresse e-mail" required>
             </div>
             <div class="mb-4">
-                <input type="password" class="form-control form-control-lg fs-5" name="mot_de_passe" placeholder="Mot de passe" required>
+                <input type="password" class="form-control form-control-lg fs-5" name="mot_de_passe"  id="mot_de_passe" placeholder="Mot de passe" required>
             </div>
             <div class="d-grid">
                 <button type="submit" name="login" class="btn btn-danger btn-lg fs-5">Se connecter</button>

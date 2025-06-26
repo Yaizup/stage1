@@ -17,7 +17,6 @@ require_once "ajout_projet.php";
     <link rel="icon" href="ressource/mini_logo.png" />
   </head>
   <body class="bg-eiffel">
-
     <header>
       <?php include "navbarbs.php"; ?>
     </header>
@@ -78,6 +77,20 @@ require_once "ajout_projet.php";
                     <input type="text" class="form-control bg-dark text-white border-secondary" id="titre" name="titre" placeholder="Ex : Portfolio, Jeu 3D..." required />
                   </div>
                   <div class="mb-3">
+                    <label for="auteurs" class="form-label">Auteurs</label>
+                    <input type="text" class="form-control" name="auteurs" id="auteurs" placeholder="Nom, Prénom, etc.">
+                  </div>
+                                  <div class="mb-3">
+                  <label for="promo" class="form-label">Promotion</label>
+                  <select class="form-select bg-dark text-white border-secondary" id="promo" name="promo" required>
+                    <option value="" disabled selected>Choisissez une promotion</option>
+                    <option value="MMI1">MMI1</option>
+                    <option value="MMI2">MMI2</option>
+                    <option value="MMI3">MMI3</option>
+                  </select>
+                </div>
+
+                  <div class="mb-3">
                     <label for="categorie" class="form-label">Catégorie</label>
                     <select class="form-select bg-dark text-white border-secondary" id="categorie" name="categorie" required>
                       <option selected disabled>Choisissez une catégorie</option>
@@ -94,6 +107,13 @@ require_once "ajout_projet.php";
                   <div class="mb-3">
                     <label for="description" class="form-label">Description</label>
                     <textarea class="form-control bg-dark text-white border-secondary" id="description" name="descprojet" rows="2" placeholder="Ex : Décris ton projet brièvement" maxlength="100" required></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label for="video" class="form-label">Lien vidéo YouTube</label>
+                    <input type="url" class="form-control" name="video" id="video" placeholder="https://www.youtube.com/watch?v=...">
+                    <div id="youtube-error" class="text-danger mt-1" style="display: none;">
+                      Veuillez entrer un lien YouTube valide (ex: https://www.youtube.com/watch?v=...).
+                    </div>
                   </div>
                   <div class="mb-3">
                     <label for="fichier" class="form-label">Fichier</label>
@@ -148,6 +168,8 @@ require_once "ajout_projet.php";
 
     <script src="js/projets.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-
+    <script src="js/verif_ytb_lien.js"></script>
   </body>
+
+
 </html>

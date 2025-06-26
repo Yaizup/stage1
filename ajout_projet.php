@@ -25,7 +25,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nom = trim($_POST['titre']);
     $categorie = trim($_POST['categorie']);
     $description = trim($_POST['descprojet']);
-    $date = trim($_POST['annee']); 
+    $date = trim($_POST['annee']);
+    $video = trim($_POST['video']); 
+    $promo = trim($_POST['promo']); 
+    $auteurs = trim($_POST['auteurs']); 
 
     $image_path = null;
     $fichier_path = null;
@@ -70,42 +73,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Insertion en base
     if ($image_path && $fichier_path) {
-        try {
-            $sql = "INSERT INTO projet (nom, categorie, image, fichier, description, date) 
-                    VALUES (:nom, :categorie, :image, :fichier, :description, :date)";
-            $stmt = $db->prepare($sql);
-            $stmt->execute([
-                ':nom' => $nom,
-                ':categorie' => $categorie,
-                ':image' => $image_path,
-                ':fichier' => $fichier_path,
-                ':description' => $description,
-                ':date' => $date
-            ]);
+            try {
+                $sql = "INSERT INTO projet (nom, categorie, image, fichier, description, date, video, promo, auteurs) 
+                        VALUES (:nom, :categorie, :image, :fichier, :description, :date, :video, :promo, :auteurs)";
+                $stmt = $db->prepare($sql);
+                $stmt->execute([
+                    ':nom' => $nom,
+                    ':categorie' => $categorie,
+                    ':image' => $image_path,
+                    ':fichier' => $fichier_path,
+                    ':description' => $description,
+                    ':date' => $date,
+                    ':video' => $video,
+                    ':promo' => $promo,
+                    ':auteurs' => $auteurs
+                ]);
 
-            // Redirection PRG
-            header("Location: " . $_SERVER['PHP_SELF'] . "?success=1");
-            exit;
+                header("Location: " . $_SERVER['PHP_SELF'] . "?success=1");
+                exit;
 
-        } catch (PDOException $e) {
-            echo "<p style='color:red;'>Erreur BDD : " . $e->getMessage() . "</p>";
+            } catch (PDOException $e) {
+                echo "<p style='color:red;'>Erreur BDD : " . $e->getMessage() . "</p>";
+            }
+        } else {
+                echo "
+    <div class='container my-5'>
+        <div class='card border-0 shadow-lg p-5 text-center align-items-center justify-content-center mx-auto'>
+            <img src='ressource/images/perso_triste.jpg' alt='echec' class='img-fluid mb-4' style='max-width: 500px; border-radius: 1rem;'>
+            <h1 class='text-danger fw-bold display-4 mb-3'>Echec de l'ajout du Projet</h1>
+            <p class='fs-4 text-alert'>Oups! cela n'a pas fonctionné :( </p>
+            <a href='projets.php' class='btn btn-outline-danger btn-sm mt-4 d-flex align-items-center justify-content-center mx-auto' style='max-width: 200px;'>
+                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-left me-2' viewBox='0 0 16 16'>
+                    <path fill-rule='evenodd' d='M15 8a.5.5 0 0 1-.5.5H3.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L3.707 7.5H14.5A.5.5 0 0 1 15 8z'/>
+                </svg>
+                Retour à l’accueil
+            </a>
+        </div>
+    </div>";
         }
-    } else {
-            echo "
-<div class='container my-5'>
-    <div class='card border-0 shadow-lg p-5 text-center align-items-center justify-content-center mx-auto'>
-        <img src='ressource/images/perso_triste.jpg' alt='echec' class='img-fluid mb-4' style='max-width: 500px; border-radius: 1rem;'>
-        <h1 class='text-danger fw-bold display-4 mb-3'>Echec de l'ajout du Projet</h1>
-        <p class='fs-4 text-alert'>Oups! cela n'a pas fonctionné :( </p>
-        <a href='projets.php' class='btn btn-outline-danger btn-sm mt-4 d-flex align-items-center justify-content-center mx-auto' style='max-width: 200px;'>
-            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-arrow-left me-2' viewBox='0 0 16 16'>
-                <path fill-rule='evenodd' d='M15 8a.5.5 0 0 1-.5.5H3.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L3.707 7.5H14.5A.5.5 0 0 1 15 8z'/>
-            </svg>
-            Retour à l’accueil
-        </a>
-    </div>
-</div>";
-    }
 }
 ?>
 <!DOCTYPE html>

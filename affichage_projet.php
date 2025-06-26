@@ -15,6 +15,11 @@ if (!$projet) {
   echo "Projet introuvable.";
   exit;
 }
+
+// Gestion des auteurs
+$auteurs = isset($projet['auteurs']) && trim($projet['auteurs']) !== ''
+  ? explode(',', ucfirst($projet['auteurs']))
+  : [];
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +38,7 @@ if (!$projet) {
 <body>
 
 <header>
-  <?php include "navbarbs.php" ; ?>
+  <?php include "navbarbs.php"; ?>
 </header> 
 
 <div class="container my-5">
@@ -45,28 +50,40 @@ if (!$projet) {
     <div class="col-lg-5 ms-5">
       <div class="row">
         <h5 class="text-white fs-4">MMI MEAUX</h5>
-         <h5 class="text-white fs-4">Présentation des projets</h5>
-      </div>
-      
-
-      <div class=" mt-3">
-        <p class="fw-bold text-uppercase  fs-4"><?= htmlspecialchars($projet['categorie']) ?></p>
-        <h1 class="fw-bold fs-2"><?= htmlspecialchars($projet['nom']) ?></h2>
-      </div>
-      
-       
-
-      <div class="my-4"></i>
-        <i class="btn bi bi-play-btn fs-3 text-white me-2"  data-bs-toggle="tooltip"  data-bs-placement="top"  title="Vidéo demonstration"></i>
-         <a href="<?= htmlspecialchars($projet['fichier']) ?>" target="_blank" ><i class="btn bi bi-calendar3 text-white  fs-3" data-bs-toggle="tooltip"  data-bs-placement="top"  title="Voir le projet en détail"> </i> </a>
+        <h5 class="text-white fs-4">Présentation des projets</h5>
       </div>
 
-      <p class="mt-2" ><strong>Réalisé le:</strong> <?= htmlspecialchars($projet['date']) ?></p>
+      <div class="mt-3">
+        <p class="fw-bold text-uppercase fs-4">Categorie - <?= htmlspecialchars($projet['categorie']) ?></p>
+        <h1 class="fw-bold fs-2"><?= htmlspecialchars(ucfirst($projet['nom'])) ?></h1>
+      </div>
 
-      <p><strong>Auteur(s) :</strong> <?= htmlspecialchars($projet['auteur'] ?? 'Non renseigné') ?></p>
+      <div class="my-4 d-flex gap-3">
+        <?php if (!empty($projet['video'])): ?>
+          <a href="<?= htmlspecialchars($projet['video']) ?>" target="_blank" class="btn text-white" data-bs-toggle="tooltip" title="Voir la vidéo">
+            <i class="bi bi-youtube fs-3"></i>
+          </a>
+        <?php endif; ?>
+
+        <?php if (!empty($projet['fichier'])): ?>
+          <a href="<?= htmlspecialchars($projet['fichier']) ?>" target="_blank" class="btn text-white" data-bs-toggle="tooltip" title="Voir le projet en détail">
+            <i class="bi bi-calendar3 fs-3"></i>
+          </a>
+        <?php endif; ?>
+      </div>
+
+      <p class="mt-2"><strong>Réalisé le :</strong> <?= htmlspecialchars($projet['date']) ?></p>
+
+      <p><strong>Auteur(s) :</strong>
+        <?php if (!empty($auteurs)): ?>
+          <?= implode(', ', array_map('htmlspecialchars', array_map('trim', $auteurs))) ?>
+        <?php else: ?>
+          Non renseigné
+        <?php endif; ?>
+      </p>
 
       <p><strong>Description / démarche :</strong><br>
-        <?= nl2br(htmlspecialchars($projet['description'])) ?>
+        <?= nl2br(htmlspecialchars(ucfirst($projet['description']))) ?>
       </p>
     </div>
   </div>
@@ -92,7 +109,6 @@ if (!$projet) {
     </div>
   </div>
 </footer>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
