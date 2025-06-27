@@ -33,6 +33,7 @@ $auteurs = isset($projet['auteurs']) && trim($projet['auteurs']) !== ''
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
   <link href="css/navbarbs.css" rel="stylesheet">
+   <link href="css/btn.css" rel="stylesheet">
   <link href="css/affichage_projet.css" rel="stylesheet">
 </head>
 <body>
@@ -41,8 +42,11 @@ $auteurs = isset($projet['auteurs']) && trim($projet['auteurs']) !== ''
   <?php include "navbarbs.php"; ?>
 </header> 
 
+
 <div class="container my-5">
+  
   <div class="row mt-5">
+    
     <div class="col-lg-6 mb-4">
       <img src="<?= htmlspecialchars($projet['image']) ?>" alt="Image du projet" class="project-img shadow">
     </div>
@@ -95,5 +99,20 @@ $auteurs = isset($projet['auteurs']) && trim($projet['auteurs']) !== ''
 <?php include "footer.php"; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+function toggleEdit(field) {
+  document.getElementById(`${field}_display`).classList.add('d-none');
+  document.getElementById(`${field}_input`).classList.remove('d-none');
+  document.getElementById(`${field}_save`).classList.remove('d-none');
+}
+
+function cancelEdit(field) {
+  document.getElementById(`${field}_display`).classList.remove('d-none');
+  document.getElementById(`${field}_input`).classList.add('d-none');
+  document.getElementById(`${field}_save`).classList.add('d-none');
+}
+</script>
+
 </body>
+
 </html>

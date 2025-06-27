@@ -8,3 +8,31 @@
   background-color: #2a3180 !important;
   color: white !important;
 }
+
+
+
+.retour-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1030;
+  color: #000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.retour-btn:hover {
+  color: #333;
+}
+
+/* Optionnel : adapte la taille sur mobile */
+@media (max-width: 576px) {
+  .retour-btn {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+
+  .retour-btn i {
+    font-size: 1.5rem !important;
+  }
+}

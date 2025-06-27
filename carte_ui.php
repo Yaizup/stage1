@@ -68,7 +68,6 @@ $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
               <div class="card-body d-flex flex-column text-center">
                 <h5 class="card-title fw-bold text-uppercase"><?= htmlspecialchars($projet['nom']) ?></h5>
-                <p class="card-text text-muted"><?= nl2br(htmlspecialchars($projet['description'])) ?></p>
                 <p class="mb-1"><strong>Catégorie :</strong> <?= htmlspecialchars($projet['categorie']) ?></p>
                 <p><strong>Date :</strong> <?= htmlspecialchars($projet['date']) ?></p>
 

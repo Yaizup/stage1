@@ -45,14 +45,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Connexion</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.materialdesignicons.com/7.2.96/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="css/btn.css" rel="stylesheet"/>
+
 </head>
 <body class="bg-light d-flex justify-content-center align-items-center" style="height: 100vh;">
+<a href="projets.php" class="btn btn-link d-inline-flex align-items-center retour-btn fs-4">
+  <i class="mdi mdi-arrow-left fs-3 me-2"></i>Retour
+</a>
 
     <div class="card shadow-lg p-5" style="width: 100%; max-width: 600px; border-radius: 20px;">
         <h2 class="text-center mb-4 fs-2">Connexion</h2>
         <?php if (isset($erreur)): ?>
     <div class="alert alert-danger fs-6"><?= htmlspecialchars($erreur) ?></div>
 <?php endif; ?>
+
+
 
 
         <form action="connexion.php" method="post">
