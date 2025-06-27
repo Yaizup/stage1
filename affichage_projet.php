@@ -65,9 +65,9 @@ $auteurs = isset($projet['auteurs']) && trim($projet['auteurs']) !== ''
           </a>
         <?php endif; ?>
 
-        <?php if (!empty($projet['fichier'])): ?>
-          <a href="<?= htmlspecialchars($projet['fichier']) ?>" target="_blank" class="btn text-white" data-bs-toggle="tooltip" title="Voir le projet en détail">
-            <i class="bi bi-calendar3 fs-3"></i>
+        <?php if (!empty($projet['drive'])): ?>
+          <a href="<?= htmlspecialchars($projet['drive']) ?>" target="_blank" class="btn text-white" data-bs-toggle="tooltip" title="Voir le projet en détail">
+            <i class="bi bi-eye fs-3"></i>
           </a>
         <?php endif; ?>
       </div>
@@ -82,6 +82,9 @@ $auteurs = isset($projet['auteurs']) && trim($projet['auteurs']) !== ''
         <?php endif; ?>
       </p>
 
+      <p class="mt-2"><strong>Promotion :</strong> <?= htmlspecialchars($projet['promo']) ?></p>
+
+
       <p><strong>Description / démarche :</strong><br>
         <?= nl2br(htmlspecialchars(ucfirst($projet['description']))) ?>
       </p>
@@ -89,26 +92,7 @@ $auteurs = isset($projet['auteurs']) && trim($projet['auteurs']) !== ''
   </div>
 </div>
 
-<footer class="text-light pt-5 pb-4 mt-auto border-top border-secondary bg-dark">
-  <div class="container text-center text-md-start">
-    <div class="row justify-content-center">
-      <div class="col-md-6 col-lg-4 mb-4">
-        <h5 class="text-uppercase fw-bold mb-3">Adresse IUT</h5>
-        <p class="mb-1">17 Rue Jablinot</p>
-        <p class="mb-0">77100 Meaux</p>
-      </div>
-      <div class="col-md-6 col-lg-4 mb-4">
-        <h5 class="text-uppercase fw-bold mb-3">Secrétariat</h5>
-        <p class="mb-1">chantal.jean-louis@univ-eiffel.fr</p>
-        <p class="mb-0">01 64 36 44 06</p>
-      </div>
-    </div>
-    <hr class="border-secondary my-3">
-    <div class="text-center small text-secondary">
-      © 2023 - BUT MÉTIERS DU MULTIMÉDIA ET DE L'INTERNET, MEAUX
-    </div>
-  </div>
-</footer>
+<?php include "footer.php"; ?>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

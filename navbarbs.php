@@ -1,6 +1,7 @@
 <?php
 require_once 'dbconnect.php';
 
+
 ?>
 
 <div class="container mt-5">
@@ -19,28 +20,28 @@ require_once 'dbconnect.php';
       <div class="collapse navbar-collapse justify-content-end" id="navbarContent">
         <ul class="navbar-nav gap-3">
           <li class="nav-item">
-            <a class="nav-link-custom text-white fs-5" href="formation.php">La Formation</a>
+            <a class="nav-link-custom text-white fs-4" href="formation.php">La Formation</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link-custom text-white fs-5" href="salleVR.php">Salle VR</a>
+            <a class="nav-link-custom text-white fs-4" href="salleVR.php">Salle VR</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link-custom text-white fs-5" href="studio.php">Studio</a>
+            <a class="nav-link-custom text-white fs-4" href="studio.php">Studio</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link-custom text-white fs-5" href="projets.php">Projets</a>
+            <a class="nav-link-custom text-white fs-4" href="projets.php">Projets</a>
           </li>
 
-          <?php if (isset($_SESSION['pseudo'])): ?>
+          <?php if (isset($pseudo)): ?>
             <li class="nav-item">
-              <a class="nav-link-custom text-white fs-5" href="#">
-                <span class="mdi mdi-account me-2"></span>
-                Mon compte (<?= htmlspecialchars($_SESSION['pseudo']) ?>)
+              <a class="nav-link-custom text-white fs-4" href="deconnexion.php">
+                <span class="mdi mdi-logout me-2 text-danger"></span>
+                Mon compte (<?= htmlspecialchars($pseudo) ?>)
               </a>
             </li>
           <?php else: ?>
             <li class="nav-item">
-              <a class="nav-link-custom text-white fs-5" href="connexion.php">
+              <a class="nav-link-custom text-white fs-4" href="connexion.php">
                 <span class="mdi mdi-account me-2"></span>Connexion
               </a>
             </li>

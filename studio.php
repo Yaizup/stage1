@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Studio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous" />
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@7.4.47/css/materialdesignicons.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="css/navbarbs.css" />
     <link rel="stylesheet" href="css/studio.css">
     <link rel="stylesheet" href="css/flickity.min.css" media="screen">
     <link rel="icon" href="ressource/mini_logo.png">
@@ -37,30 +41,7 @@
         </div>
     </div>
     <header>
-        <a href="index.php"><img src="ressource/logo.png" alt="logo de l'Université Gustave Eiffel"></a>
-        <nav>
-            <div class="container-nav">
-                <a href="formation.php">La Formation</a>
-                <div class="traits"></div>
-            </div>
-            <div class="container-nav">
-                <a href="salleVR.php">Salle VR</a>
-                <div class="traits"></div>
-            </div>
-            <div class="container-nav">
-                <a href="#">Studio</a>
-                <div class="traits active"></div>
-            </div>
-            <div class="container-nav">
-                <a href="projets.php">Projets</a>
-                <div class="traits"></div>
-            </div>
-            <div class="container-nav">
-                <a href="visite-virtuelle.php">Visite Virtuelle</a>
-                <div class="traits"></div>
-            </div>
-        </nav>
-        <img id="menu-burger" class="none" src="ressource/icones/menu.png" alt="menu">
+        <?php include "navbarbs.php"; ?>
     </header>
     <div id="imgfond">
         <img id="imgcouverture" src="ressource/images/studio.png" alt="salle avec un grand fond vert faisant le mur et le sol">

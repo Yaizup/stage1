@@ -1,6 +1,6 @@
 <?php
 require_once 'dbconnect.php'; 
-session_start (); 
+session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $pseudo_email = $_POST['pseudo_email'];

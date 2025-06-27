@@ -1,7 +1,13 @@
 <?php 
 require_once "dbconnect.php";
 require_once "ajout_projet.php";
+require_once "auth.php";
+
+
+
+
 ?>
+
 <html lang="fr">
   <head>
     <meta charset="UTF-8" />
@@ -28,8 +34,8 @@ require_once "ajout_projet.php";
       </div>
 
       <ul class="container list-unstyled mt-5 pt-5 d-flex flex-wrap gap-3 align-items-center">
-        <li class="me-3 d-flex align-items-center">
-          <span class="mdi mdi-filter text-success fs-3 me-2"></span>
+        <li class="me-3">
+          <span class="mdi mdi-filter text-primary fs-3 me-2"></span>
         </li>
         <li class="me-3">
           <a href="projets.php" class="btn butn btn-lg">Tout</a>
@@ -49,11 +55,22 @@ require_once "ajout_projet.php";
             <span class="mdi mdi-film me-2"></span>Communication numérique
           </a>
         </li>
-        <li class="me-3">
-          <a href="projets.php?categorie=web" class="btn btn-lg butn">
-            <span class="mdi mdi-microsoft-visual-studio-code me-2"></span>Développement Web & Mobile
-          </a>
-        </li>
+        
+          <li class="me-3">
+        <a href="projets.php?promo=MMI1" class="btn btn-lg butn">
+          <span class="mdi mdi-numeric-1-box me-2"></span>MMI1
+        </a>
+      </li>
+      <li class="me-3">
+        <a href="projets.php?promo=MMI2" class="btn btn-lg butn">
+          <span class="mdi mdi-numeric-2-box me-2"></span>MMI2
+        </a>
+      </li>
+      <li class="me-3">
+        <a href="projets.php?promo=MMI3" class="btn btn-lg butn">
+          <span class="mdi mdi-numeric-3-box me-2"></span>MMI3
+        </a>
+      </li>
       </ul>
 
       <div class="container d-flex justify-content-center align-items-center mt-5 flex-column">
@@ -109,18 +126,16 @@ require_once "ajout_projet.php";
                     <textarea class="form-control bg-dark text-white border-secondary" id="description" name="descprojet" rows="2" placeholder="Ex : Décris ton projet brièvement" maxlength="100" required></textarea>
                   </div>
                   <div class="mb-3">
-                    <label for="video" class="form-label">Lien vidéo YouTube</label>
-                    <input type="url" class="form-control" name="video" id="video" placeholder="https://www.youtube.com/watch?v=...">
-                    <div id="youtube-error" class="text-danger mt-1" style="display: none;">
-                      Veuillez entrer un lien YouTube valide (ex: https://www.youtube.com/watch?v=...).
-                    </div>
+                  <label for="drive" class="form-label">Lien Google Drive</label>
+                  <input type="url" class="form-control" name="drive" id="drive" placeholder="https://drive.google.com/file/d/.../view?usp=sharing">
+                  <div id="drive-error" class="text-danger mt-1" style="display: none;">
+                    Veuillez entrer un lien Google Drive valide (ex: https://drive.google.com/file/d/...).
                   </div>
+                </div>
+
+                 
                   <div class="mb-3">
-                    <label for="fichier" class="form-label">Fichier</label>
-                    <input type="file" class="form-control bg-dark text-white border-secondary" id="fichier" name="fichier" accept=".pdf ,.png, .mp4" required />
-                  </div>
-                  <div class="mb-3">
-                    <label for="annee" class="form-label">Date de finalisation</label>
+                    <label for="annee" class="form-label">Date de livraison du projet</label>
                     <select class="form-select bg-dark text-white border-secondary" id="annee" name="annee" required>
                       <option value="">-- Choisissez une année --</option>
                       <?php
@@ -144,27 +159,8 @@ require_once "ajout_projet.php";
         <?php include "carte_ui.php"; ?>
       </div>
     </div>
+    <?php include "footer.php"; ?>
 
-    <footer class="text-light pt-5 pb-4 mt-auto border-top border-secondary">
-      <div class="container text-center text-md-start">
-        <div class="row justify-content-center">
-          <div class="col-md-6 col-lg-4 mb-4">
-            <h5 class="text-uppercase fw-bold mb-3">Adresse IUT</h5>
-            <p class="mb-1">17 Rue Jablinot</p>
-            <p class="mb-0">77100 Meaux</p>
-          </div>
-          <div class="col-md-6 col-lg-4 mb-4">
-            <h5 class="text-uppercase fw-bold mb-3">Secrétariat</h5>
-            <p class="mb-1">chantal.jean-louis@univ-eiffel.fr</p>
-            <p class="mb-0">01 64 36 44 06</p>
-          </div>
-        </div>
-        <hr class="border-secondary my-3">
-        <div class="text-center small text-secondary">
-          © 2023 - BUT MÉTIERS DU MULTIMÉDIA ET DE L'INTERNET, MEAUX
-        </div>
-      </div>
-    </footer>
 
     <script src="js/projets.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>

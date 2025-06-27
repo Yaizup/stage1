@@ -1,21 +1,36 @@
 <?php
 require_once "dbconnect.php";
 
-// Récupération du filtre catégorie (via GET)
+// Récupération des filtres (via GET)
 $categorie_filtre = isset($_GET['categorie']) ? trim($_GET['categorie']) : '';
+$promo_filtre = isset($_GET['promo']) ? trim($_GET['promo']) : '';
 
-// Préparation de la requête selon filtre
+// Construction de la requête avec filtres dynamiques
+$conditions = [];
+$params = [];
+
 if ($categorie_filtre) {
-    $sql = "SELECT * FROM projet WHERE categorie = :categorie ORDER BY date DESC";
-    $stmt = $db->prepare($sql);
-    $stmt->execute([':categorie' => $categorie_filtre]);
-} else {
-    $sql = "SELECT * FROM projet ORDER BY date DESC";
-    $stmt = $db->query($sql);
+    $conditions[] = 'categorie = :categorie';
+    $params[':categorie'] = $categorie_filtre;
 }
+
+if ($promo_filtre) {
+    $conditions[] = 'promo = :promo';
+    $params[':promo'] = $promo_filtre;
+}
+
+$sql = "SELECT * FROM projet";
+if (!empty($conditions)) {
+    $sql .= " WHERE " . implode(" AND ", $conditions);
+}
+$sql .= " ORDER BY date DESC";
+
+$stmt = $db->prepare($sql);
+$stmt->execute($params);
 
 $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
