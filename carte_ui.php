@@ -70,6 +70,7 @@ $projets = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 <h5 class="card-title fw-bold text-uppercase"><?= htmlspecialchars($projet['nom']) ?></h5>
                 <p class="mb-1"><strong>Catégorie :</strong> <?= htmlspecialchars($projet['categorie']) ?></p>
                 <p><strong>Date :</strong> <?= htmlspecialchars($projet['date']) ?></p>
+                <p><strong>Promotion :</strong> <?= htmlspecialchars($projet['promo']) ?></p>
 
                 <a href="affichage_projet.php?id=<?= urlencode($projet['id']) ?>" class="btn btn-projet w-100 mt-auto">
                 Voir le projet

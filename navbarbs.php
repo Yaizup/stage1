@@ -1,6 +1,6 @@
 <?php
 require_once 'dbconnect.php';
-require_once "auth.php";
+
 
 ?>
 
@@ -32,11 +32,11 @@ require_once "auth.php";
             <a class="nav-link-custom text-white fs-4" href="projets.php">Projets</a>
           </li>
 
-          <?php if (isset($pseudo)): ?>
+          <?php if (isset($role) && $role === 'admin'): ?>
             <li class="nav-item">
               <a class="nav-link-custom text-white fs-4" href="deconnexion.php">
                 <span class="mdi mdi-logout me-2 text-danger"></span>
-                Mon compte (<?= htmlspecialchars($pseudo) ?>)
+                Mon compte (<?= htmlspecialchars($role) ?>)
               </a>
             </li>
           <?php else: ?>

@@ -56,7 +56,24 @@ if (!empty(trim($projet['auteurs']))) {
 <div class="container my-5">
   <div class="row mt-5">
     <div class="col-lg-6 mb-4">
-      <img src="<?= htmlspecialchars($projet['image']) ?>" alt="Image du projet" class="project-img shadow" />
+      <div class="position-relative">
+  <img src="<?= htmlspecialchars($projet['image']) ?>" alt="Image du projet" class="project-img shadow" id="image_display" />
+
+  <?php if ($role === 'admin'): ?>
+  <button id="image_edit_btn" class="btn btn-outline-light btn-sm position-absolute top-0 end-0 m-2" onclick="toggleEdit('image')">
+    <i class="mdi mdi-pencil"></i>
+  </button>
+
+  <form method="post" action="maj_projets.php" enctype="multipart/form-data" class="d-none mt-2" id="image_form">
+    <input type="hidden" name="id" value="<?= $projet['id'] ?>" />
+    <input type="hidden" name="field" value="image" />
+    <input type="file" name="image_file" accept="image/*" class="form-control mb-2" required />
+    <button type="submit" class="btn btn-success"><i class="mdi mdi-check"></i></button>
+    <button type="button" class="btn btn-danger" onclick="cancelEdit('image')"><i class="mdi mdi-close"></i></button>
+  </form>
+<?php endif; ?>
+
+</div>
     </div>
     <div class="col-lg-5 ms-5 text-white">
       <div class="row mb-3">
@@ -127,7 +144,7 @@ if (!empty(trim($projet['auteurs']))) {
       <input type="hidden" name="field" value="date" />
       
       <select id="date_input" name="value"
-              class="form-select form-select-sm d-none bg-dark text-white border-secondary"
+              class="form-select form-select-sm d-none  border-secondary"
               style="width: auto; display: inline-block;">
         <option value="">-- Année --</option>
         <?php

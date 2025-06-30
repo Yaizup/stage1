@@ -75,7 +75,7 @@ require_once "auth.php";
     </ul>
 
     <?php if (isset($role) && ($role=== 'admin')) : ?>
-      <div class="container ms-4 mb-5 text-center">
+      <div class="container ms-4 pt-3 mb-5 text-center">
         <button type="button" class="btn btn-danger btn-lg mx-auto" data-bs-toggle="modal" data-bs-target="#modalProjet">
           <span class="mdi mdi-arrow-down me-2"></span>Partager son projet
         </button>
@@ -141,13 +141,13 @@ require_once "auth.php";
                   <textarea class="form-control bg-dark text-white border-secondary" id="description" name="descprojet" rows="2" placeholder="Ex : Décris ton projet brièvement" maxlength="100" required></textarea>
                 </div>
 
-                <div class="mb-3">
-                  <label for="drive" class="form-label">Lien Google Drive</label>
-                  <input type="url" class="form-control bg-dark" name="drive" id="drive" placeholder="https://drive.google.com/file/d/.../view?usp=sharing" required>
-                  <div id="drive-error" class="text-danger mt-1" style="display: none;">
-                    Veuillez entrer un lien Google Drive valide (ex: https://drive.google.com/file/d/...).
-                  </div>
-                </div>
+                            <div class="mb-3">
+              <label for="drive" class="form-label">Lien Google Drive</label>
+              <input type="url" class="form-control" name="drive" id="drive" placeholder="https://drive.google.com/file/d/.../view?usp=sharing" required>
+              <div id="drive-error" class="text-danger mt-1" style="display: none;">
+                Veuillez entrer un lien Google Drive valide (ex: https://drive.google.com/file/d/...).
+              </div>
+            </div>
 
                 <div class="mb-3">
                   <label for="annee" class="form-label">Date de livraison du projet</label>
@@ -175,11 +175,14 @@ require_once "auth.php";
       <?php include "carte_ui.php"; ?>
     </div>
   </div>
-
   <?php include "footer.php"; ?>
-
+  <script>
+    window.addEventListener('unload', function () {
+    navigator.sendBeacon('unset_role.php');  // j'ai essayé de faire en sorte que le role admin s'enleve a chaqque que l'utilisateur ferme le navigateur (non opérationel)
+  });
+  </script>
   <script src="js/projets.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/verif_ytb_lien.js"></script>
+  <script src="js/verif_lien.js"></script>
 </body>
 </html>
