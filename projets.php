@@ -42,6 +42,11 @@ require_once "auth.php";
           <span class="mdi mdi-gradient-horizontal me-2"></span>Infographie
         </a>
       </li>
+       <li class="me-3">
+        <a href="projets.php?categorie=Web" class="btn butn btn-lg">
+          <span class="mdi mdi-gradient-horizontal me-2"></span>Developpement Web & App
+        </a>
+      </li>
       <li class="me-3">
         <a href="projets.php?categorie=3d" class="btn btn-lg butn">
           <span class="mdi mdi-cube-scan me-2"></span>Dispositif Interactif 3D
@@ -138,7 +143,7 @@ require_once "auth.php";
 
                 <div class="mb-3">
                   <label for="drive" class="form-label">Lien Google Drive</label>
-                  <input type="url" class="form-control" name="drive" id="drive" placeholder="https://drive.google.com/file/d/.../view?usp=sharing">
+                  <input type="url" class="form-control bg-dark" name="drive" id="drive" placeholder="https://drive.google.com/file/d/.../view?usp=sharing" required>
                   <div id="drive-error" class="text-danger mt-1" style="display: none;">
                     Veuillez entrer un lien Google Drive valide (ex: https://drive.google.com/file/d/...).
                   </div>
@@ -159,8 +164,8 @@ require_once "auth.php";
               </div>
 
               <div class="modal-footer border-secondary">
-                <button type="submit" class="btn btn-teal">Ajouter le projet</button>
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+                <button type="submit" class="btn btn-success">Ajouter le projet</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Annuler</button>
               </div>
             </form>
           </div>
