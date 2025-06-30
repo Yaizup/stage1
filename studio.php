@@ -41,7 +41,30 @@
         </div>
     </div>
     <header>
-        <?php include "navbarbs.php"; ?>
+        <a href="index.php"><img src="ressource/images/logommi_2025.png" alt="logo de l'Université Gustave Eiffel"></a>
+        <nav>
+            <div class="container-nav">
+                <a href="formation.php">La Formation</a>
+                <div class="traits"></div>
+            </div>
+            <div class="container-nav">
+                <a href="salleVR.php">Salle VR</a>
+                <div class="traits"></div>
+            </div>
+            <div class="container-nav">
+                <a href="#">Studio</a>
+                <div class="traits active"></div>
+            </div>
+            <div class="container-nav">
+                <a href="projets.php">Projets</a>
+                <div class="traits"></div>
+            </div>
+            <div class="container-nav">
+                <a href="http://site.mmimeaux.com/reservation/PHP/connexion-compte.php">Reservation</a>
+                <div class="traits"></div>
+            </div>
+        </nav>
+        <img id="menu-burger" class="none" src="ressource/icones/menu.png" alt="menu">
     </header>
     <div id="imgfond">
         <img id="imgcouverture" src="ressource/images/studio.png" alt="salle avec un grand fond vert faisant le mur et le sol">
@@ -58,7 +81,7 @@
         </div>
         <img src="ressource/images/regie.png" alt="régie avec une vitre où l'on voit le fond vert à travers">
     </div>
-    <div id="container-carousel">
+    <!-- <div id="container-carousel">
         <h2>Le matériel disponible</h2>
         <div class="carousel"></div>
         <p class="item-name"></p>
@@ -72,7 +95,7 @@
             <div class="carousel-cell"><img src="ressource/materiel/RodeNTG1.png" alt="Micro"></div>
             <div class="carousel-cell"><img src="ressource/materiel/zoom-h5.png" alt="Projecteur laser"></div>
         </div>
-    </div>
+    </div>--> 
     <footer>
         <div id="container">
             <div class="infooter">

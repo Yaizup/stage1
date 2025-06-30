@@ -39,7 +39,7 @@
         </div>
     </div>
     <header>
-        <a href="index."><img src="ressource/logo.png" alt="logo de l'Université Gustave Eiffel"></a>
+        <a href="index.php"><img src="ressource/images/logommi_2025.png" alt="logo de l'Université Gustave Eiffel"></a>
         <nav>
             <div class="container-nav">
                 <a href="formation.php">La Formation</a>
@@ -106,7 +106,7 @@
             </div>
             <div id="btns">
                 <div class="btn-hover"><a href="formation.html">Découvrir la formation</a></div>
-                <div class="btn-hover"><a href="visite-virtuelle.html">Visiter l'IUT</a></div>
+                <div class="btn-hover"><a href="visite-virtuelle.html">Reserver du materiel </a></div>
             </div>
         </div>
     </div>

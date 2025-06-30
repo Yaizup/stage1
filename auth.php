@@ -3,8 +3,8 @@ session_start();
 
 require_once 'dbconnect.php';
 
-// Valeurs par défaut (visiteur non connecté)
-$role = 'visiteur';
+
+$role = null;
 $pseudo = null;
 $nom = null;
 $prenom = null;

@@ -41,26 +41,26 @@ require_once 'dbconnect.php';
         </div>
     </div>
     <header>
-        <a href="index.php"><img src="ressource/logo.png" alt="logo de l'Université Gustave Eiffel"></a>
+        <a href="index.php"><img src="ressource/images/logommi_2025.png" alt="logo de l'Université Gustave Eiffel"></a>
         <nav>
             <div class="container-nav">
                 <a href="formation.php">La Formation</a>
                 <div class="traits"></div>
             </div>
             <div class="container-nav">
-                <a href="#">Salle VR</a>
+                <a href="salleVR.php">Salle VR</a>
                 <div class="traits active"></div>
             </div>
             <div class="container-nav">
                 <a href="studio.php">Studio</a>
-                <div class="traits"></div>
+                <div class="traits "></div>
             </div>
             <div class="container-nav">
                 <a href="projets.php">Projets</a>
                 <div class="traits"></div>
             </div>
             <div class="container-nav">
-                <a href="visite-virtuelle.php">Visite Virtuelle</a>
+                <a href="http://site.mmimeaux.com/reservation/PHP/connexion-compte.php">Reservation</a>
                 <div class="traits"></div>
             </div>
         </nav>
@@ -115,9 +115,7 @@ require_once 'dbconnect.php';
             <div class="carousel-cell"><img src="ressource/materiel/webcam.png" alt="Webcam logitech"></div>
         </div>
     </div>
-    <div id="iframe">
-        <h2>Visualisez un casque VR en 3D</h2>
-    </div>
+
     <footer>
         <div id="container">
             <div class="infooter">
