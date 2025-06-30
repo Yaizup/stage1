@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : ven. 27 juin 2025 à 16:42
+-- Généré le : lun. 30 juin 2025 à 17:02
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.2.12
 
@@ -313,8 +313,10 @@ CREATE TABLE `projet` (
 --
 
 INSERT INTO `projet` (`id`, `nom`, `categorie`, `image`, `description`, `date`, `auteurs`, `video`, `promo`, `drive`) VALUES
-(98, 'test infographie', 'infographie', './uploads/3a4f748b50393dd7d8d7d57b9596fa47.jpg', 'ceci est un test pour l\'infographie', '2023', 'Benzema ', 'https://www.youtube.com/watch?v=FYXJ1pBgkhY', 'MM1', 'https://docs.google.com/document/d/1KrGDEZpjS7K8feG5hY9X_5suNgJkPqO2jLpi8DCteEI/edit?usp=sharing'),
-(99, 'un projet en herbe', 'Communication numérique', './uploads/8efadae0af4f389f4db23fc3c84b43b8.jpg', 'ceci de', '2024', 'skibidi', 'https://www.youtube.com/watch?v=FYXJ1pBgkhY', 'MMI3', 'https://docs.google.com/document/d/1KrGDEZpjS7K8feG5hY9X_5suNgJkPqO2jLpi8DCteEI/edit?usp=sharing');
+(99, 'un projet en herbe et en terre', 'Communication numérique', './uploads/8efadae0af4f389f4db23fc3c84b43b8.jpg', 'ceci de', '2023', 'skibidi', 'https://www.youtube.com/watch?v=FYXJ1pBgkhY', 'MMI3', 'https://docs.google.com/document/d/1KrGDEZpjS7K8feG5hY9X_5suNgJkPqO2jLpi8DCteEI/edit?usp=sharing'),
+(102, 'Hololens2 Mixed Reality App', '3d', 'uploads/6862939324907_jeu_vr.jpg', 'jeu  interactif via casque de réalité virtuelle', '2023', 'TOM PROT', 'https://www.youtube.com/watch?v=FYXJ1pBgkhY', 'MMI1', 'https://drive.google.com/file/d/1k3SEj3AUzsw_uVIVHLcrtQKrFJU24sNt/view?usp=sharing'),
+(103, 'Visite virtuelle de l\'IUT de Meaux - aperçu', 'web', 'uploads/686298b66272d_Capture d\'écran 2025-06-30 122312.png', 'visite de l\'iut de meaux', '2023', 'nathan chupin', 'https://www.youtube.com/watch?v=e3OupacTPDE', 'MMI3', 'https://drive.google.com/file/d/1k3SEj3AUzsw_uVIVHLcrtQKrFJU24sNt/view?usp=sharing'),
+(104, 'Escape Room VR - Unity 3D', 'infographie', './uploads/992178a0a0f4be2879578cbc4a0cb323.png', 'un projet en infographie', '2025', 'Fares Zaidi, Nathan', 'https://www.youtube.com/watch?v=_vU09HSMvE0', '-', 'https://drive.google.com/file/d/1k3SEj3AUzsw_uVIVHLcrtQKrFJU24sNt/view?usp=sharing');
 
 -- --------------------------------------------------------
 
@@ -601,7 +603,7 @@ ALTER TABLE `materiel`
 -- AUTO_INCREMENT pour la table `projet`
 --
 ALTER TABLE `projet`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT pour la table `reservations`
